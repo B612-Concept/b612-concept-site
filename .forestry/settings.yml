@@ -7,7 +7,6 @@ sections:
 - type: document
   path: content
   label: Concept Page
-  match: "**/*"
   read_only: false
 upload_dir: static/uploads
 public_path: "/static/uploads"
