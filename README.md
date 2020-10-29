@@ -1,4 +1,6 @@
-# b612
+# B612
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c2355e71-d761-4963-a3f8-63160b319895/deploy-status)](https://app.netlify.com/sites/at-b612/deploys)
 
 ## Setup
 
