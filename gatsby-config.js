@@ -1,12 +1,18 @@
-function fromStatic(nodes) {
+/**
+ * Get path relative to static/ directory
+ *
+ * @param {array} nodes
+ * @returns {string}
+ */
+function fromStatic(...nodes) {
   return `${__dirname}/static/${nodes.join('/')}`
 }
 
-const siteName = 'B612'
+const SITE_NAME = 'B612'
 
 module.exports = {
   siteMetadata: {
-    title: siteName,
+    title: SITE_NAME,
     description: `B612 is the only wellness experience service that provides a habitual way to disconnect and seclude in a private space for the introspective, achievers in Seattle WA who seek a mental getaway from the urban lifestyle in an era of digital exhaustion and hustle culture.`,
     author: `Scout <neuscout411@gmail.com>`,
   },
@@ -24,8 +30,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: siteName,
-        short_name: siteName,
+        name: SITE_NAME,
+        short_name: SITE_NAME,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
