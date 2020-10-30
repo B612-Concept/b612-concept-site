@@ -12,7 +12,8 @@
 
 ## TODOs:
 
-- [ ] Updated README
-- [ ] Updated project board
+- [ ] Updated README?
+- [ ] Updated project board?
+- [ ] Designer approval if needed?
 
 ## Notes:
