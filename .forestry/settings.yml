@@ -3,7 +3,14 @@ new_page_extension: md
 auto_deploy: false
 admin_path: "/static/admin"
 webhook_url: 
-sections: 
+sections:
+- type: document
+  path: content/sceneContainer.md
+  label: Scene Container
+  match: "**/*"
+  read_only: false
+- type: heading
+  label: Content
 upload_dir: static/uploads
 public_path: "/static/uploads"
 front_matter_path: ''
