@@ -17,3 +17,5 @@ fields:
     template: scene
     label: Content
   label: Reflection Scene
+pages:
+- content/sceneContainer.md
