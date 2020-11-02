@@ -1,5 +1,5 @@
-import React from 'react'
+import React from 'react';
 
-const IndexPage = () => <h1>B612</h1>
+const IndexPage = () => <h1>B612</h1>;
 
-export default IndexPage
+export default IndexPage;

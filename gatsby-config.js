@@ -5,10 +5,10 @@
  * @returns {string}
  */
 function fromStatic(...nodes) {
-  return `${__dirname}/static/${nodes.join('/')}`
+  return `${__dirname}/static/${nodes.join('/')}`;
 }
 
-const SITE_NAME = 'B612'
+const SITE_NAME = 'B612';
 
 module.exports = {
   siteMetadata: {
@@ -48,4 +48,4 @@ module.exports = {
       },
     },
   ],
-}
+};
