@@ -25,6 +25,14 @@ module.exports = {
         path: fromStatic('assets'),
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `forestry`,
+        path: `content/`,
+      },
+    },
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
