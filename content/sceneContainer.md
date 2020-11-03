@@ -1,5 +1,5 @@
 ---
-question: What does space mean to you?
+question: Bonjour. What do you need today?
 reflection_scene:
   body: Sample Body
   title: A space to reflect and think freely?
@@ -21,4 +21,5 @@ getaway_scene:
 journey_scene:
   title: A space to journey to your own planet?
   body: ''
+
 ---
