@@ -1,8 +1,8 @@
 ---
+question: What does space mean to you?
 reflection_scene:
   body: Sample Body
   title: A space to reflect and think freely?
-question: Bonjour. What do you need today?
 safe_scene:
   title: A space to feel safe?
   body: ''
