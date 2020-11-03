@@ -1,8 +1,9 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import './index.css';
 
 const HomePage = ({ data }) => {
-  const scenes = data.allMarkdownRemark.edges[0].node;
+  const scenes = data.markdownRemark;
   const scenesArray = Object.values(scenes.frontmatter);
 
   return (
@@ -28,41 +29,37 @@ export default HomePage;
 
 export const query = graphql`
   query HomePageQuery {
-    allMarkdownRemark {
-      edges {
-        node {
-          frontmatter {
-            title
-            question
-            calm_scene {
-              body
-              title
-            }
-            getaway_scene {
-              body
-              title
-            }
-            imagine_scene {
-              body
-              title
-            }
-            journey_scene {
-              body
-              title
-            }
-            reflection_scene {
-              body
-              title
-            }
-            safe_scene {
-              body
-              title
-            }
-            senses_scene {
-              body
-              title
-            }
-          }
+    markdownRemark {
+      frontmatter {
+        title
+        question
+        calm_scene {
+          body
+          title
+        }
+        getaway_scene {
+          body
+          title
+        }
+        imagine_scene {
+          body
+          title
+        }
+        journey_scene {
+          body
+          title
+        }
+        reflection_scene {
+          body
+          title
+        }
+        safe_scene {
+          body
+          title
+        }
+        senses_scene {
+          body
+          title
         }
       }
     }
