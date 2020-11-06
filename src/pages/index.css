@@ -3,9 +3,3 @@ body {
   place-items: center;
   min-height: 100vh;
 }
-
-.question,
-.scene {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
