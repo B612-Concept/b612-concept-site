@@ -1,6 +1,15 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import styled from 'styled-components';
 import './index.css';
+
+const Question = styled.div`
+  margin: 2rem auto;
+`;
+
+const Scene = styled.div`
+  margin: 2rem auto;
+`;
 
 const HomePage = ({ data }) => {
   const scenes = data.markdownRemark;
@@ -10,13 +19,9 @@ const HomePage = ({ data }) => {
     <div>
       {scenesArray.map((value, index) => {
         if (typeof value === 'string' && value !== '') {
-          return <div className="question">{value}</div>;
+          return <Question>{value}</Question>;
         } else if (typeof value.title === 'string') {
-          return (
-            <div key={index} className="scene">
-              {value.title}
-            </div>
-          );
+          return <Scene key={index}>{value.title}</Scene>;
         } else {
           return null;
         }
