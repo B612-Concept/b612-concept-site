@@ -5,10 +5,16 @@ import './index.css';
 
 const Question = styled.div`
   margin: 2rem auto;
+  font-family: 'Franklin Gothic', 'Franklin Gothic Medium', 'Arial Narrow',
+    Arial, sans-serif;
+  font-style: italic;
+  font-weight: 500;
 `;
 
 const Scene = styled.div`
   margin: 2rem auto;
+  font-family: 'Input Mono', monospace;
+  font-style: normal;
 `;
 
 const HomePage = ({ data }) => {
