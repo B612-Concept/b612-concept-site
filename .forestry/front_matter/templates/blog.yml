@@ -30,5 +30,6 @@ fields:
   description: Should the featured image be sticky?
   default: false
 pages:
+- content/blogs/basic-blog.md
 - content/blogs/featured-image.md
 - content/blogs/sticky-featured-image.md
