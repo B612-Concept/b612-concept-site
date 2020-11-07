@@ -2,6 +2,7 @@
 date_published: 11/07/2020
 title: Sticky Featured Image
 featured_image: "/static/uploads/24p3gdlblajw2qocoyv4655uyq.jpg"
+sticky_featured_image: true
 
 ---
 # H1 Heading
