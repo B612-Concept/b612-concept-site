@@ -24,3 +24,5 @@ fields:
     maxSize: 64
   label: Featured Image
   description: Featured image for hero or sticky image
+pages:
+- content/blogs/featured-image.md
