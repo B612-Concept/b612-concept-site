@@ -34,7 +34,7 @@ export default HomePage;
 
 export const query = graphql`
   query HomePageQuery {
-    markdownRemark {
+    markdownRemark(fields: { sourceName: { eq: "scenes" } }) {
       frontmatter {
         title
         question
