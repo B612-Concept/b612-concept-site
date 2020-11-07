@@ -24,5 +24,10 @@ fields:
     maxSize: 64
   label: Featured Image
   description: Featured image for hero or sticky image
+- name: sticky_featured_image
+  type: boolean
+  label: Sticky Featured Image
+  description: Should the featured image be sticky?
+  default: false
 pages:
 - content/blogs/featured-image.md
