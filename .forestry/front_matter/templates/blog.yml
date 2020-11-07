@@ -31,3 +31,4 @@ fields:
   default: false
 pages:
 - content/blogs/featured-image.md
+- content/blogs/sticky-featured-image.md
