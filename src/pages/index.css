@@ -1,4 +1,4 @@
-@import '../../static/fonts/fonts.css';
+@import '../fonts.css';
 
 body {
   display: grid;

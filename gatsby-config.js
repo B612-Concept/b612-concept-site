@@ -9,6 +9,7 @@ function fromStatic(...nodes) {
 }
 
 const SITE_NAME = 'B612';
+const path = require('path');
 
 module.exports = {
   siteMetadata: {
@@ -27,6 +28,14 @@ module.exports = {
       options: {
         name: `assets`,
         path: fromStatic('assets'),
+      },
+    },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          '@src': path.resolve(__dirname, './src'),
+        },
       },
     },
     {
