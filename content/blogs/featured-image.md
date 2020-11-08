@@ -1,7 +1,7 @@
 ---
 date_published: 11/07/2020
 title: Featured Image
-featured_image: '/static/uploads/24p3gdlblajw2qocoyv4655uyq.jpg'
+featured_image: '/uploads/24p3gdlblajw2qocoyv4655uyq.jpg'
 sticky_featured_image: false
 ---
 
@@ -19,7 +19,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ### Embedded Image
 
-![](/static/uploads/24p3gdlblajw2qocoyv4655uyq.jpg)
+![](/uploads/24p3gdlblajw2qocoyv4655uyq.jpg)
 
 **This is a bold text** vel turpis nunc eget lorem dolor sed. Accumsan tortor posuere ac ut consequat. Iaculis eu non diam phasellus vestibulum lorem sed risus ultricies.
 
