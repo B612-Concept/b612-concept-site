@@ -1,3 +1,4 @@
+const path = require('path');
 /**
  * Get path relative to static/ directory
  *
@@ -28,6 +29,14 @@ module.exports = {
       options: {
         name: `assets`,
         path: fromStatic('assets'),
+      },
+    },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          '@src': path.resolve(__dirname, './src'),
+        },
       },
     },
     {

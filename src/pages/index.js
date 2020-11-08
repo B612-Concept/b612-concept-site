@@ -2,13 +2,19 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import './index.css';
+import { franklinGothic, inputMono } from '@src/styles.js';
 
 const Question = styled.div`
   margin: 2rem auto;
+  font-family: ${franklinGothic};
+  font-style: italic;
+  font-weight: 500;
 `;
 
 const Scene = styled.div`
   margin: 2rem auto;
+  font-family: ${inputMono};
+  font-style: normal;
 `;
 
 const HomePage = ({ data }) => {
