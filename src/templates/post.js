@@ -1,40 +1,29 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-
-const Title = styled.h1`
-  font-size: 40px;
-`;
-
-const Date = styled.p``;
+import { H1, P } from '../components/fonts';
 
 const TitleDateWrapper = styled.div`
   display: flex;
+  align-items: baseline;
   justify-content: center;
 `;
 
-const BlogContent = styled.div`
-  width: 60%;
-  margin-left: 40%;
-`;
-
-export default function BlogPost({ data }) {
+export default function Post({ data }) {
   const { frontmatter, html } = data.markdownRemark;
-  const {
-    date_published,
-    featured_image,
-    question,
-    sticky_featured_image,
-    title,
-  } = frontmatter;
+  const { date_published, featured_image, title } = frontmatter;
   return (
     <div>
       <TitleDateWrapper>
-        <Date>{date_published}</Date>
-        <Title>{title}</Title>
+        <div>
+          <P>{date_published}</P>
+        </div>
+        <div>
+          <H1>{title}</H1>
+        </div>
       </TitleDateWrapper>
       <img src={featured_image} />
-      <BlogContent dangerouslySetInnerHTML={{ __html: html }} />
+      <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>
   );
 }
