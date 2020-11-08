@@ -1,3 +1,4 @@
+const path = require('path');
 /**
  * Get path relative to static/ directory
  *
@@ -9,7 +10,6 @@ function fromStatic(...nodes) {
 }
 
 const SITE_NAME = 'B612';
-const path = require('path');
 
 module.exports = {
   siteMetadata: {
