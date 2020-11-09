@@ -25,7 +25,7 @@ const HomePage = ({ data }) => {
     <div>
       {scenesArray.map((value, index) => {
         if (typeof value === 'string' && value !== '') {
-          return <Question>{value}</Question>;
+          return <Question key={index}>{value}</Question>;
         } else if (typeof value.title === 'string') {
           return <Scene key={index}>{value.title}</Scene>;
         } else {
