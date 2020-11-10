@@ -1,4 +1,11 @@
 ---
 label: Footer
 hide_body: true
-fields: []
+fields:
+- name: copyright
+  type: text
+  config:
+    required: true
+  label: Copyright
+  description: B612's copyright information
+  default: Copyright © B612
