@@ -9,19 +9,6 @@ fields:
   label: Copyright
   description: B612's copyright information
   default: Copyright © B612
-- name: social_links
-  type: field_group_list
-  fields:
-  - name: link
-    type: include
-    config: {}
-    template: link
-    label: Link
-  config:
-    min: 
-    max: 
-    labelField: 
-  label: Social Links
 - name: navigation_links
   type: field_group_list
   fields:
@@ -33,7 +20,20 @@ fields:
   config:
     min: 
     max: 
-    labelField: 
+    labelField: label
   label: Navigation Links
+- name: social_links
+  type: field_group_list
+  fields:
+  - name: link
+    type: include
+    config: {}
+    template: link
+    label: Link
+  config:
+    min: 
+    max: 
+    labelField: label
+  label: Social Links
 pages:
 - content/footer.md
