@@ -16,6 +16,12 @@ sections:
   match: "**/*"
   templates:
   - blog
+- type: heading
+  label: Site Configuration
+- type: document
+  path: content/footer.md
+  label: Footer
+  match: "**/*"
 upload_dir: static/uploads
 public_path: "/uploads"
 front_matter_path: ''
