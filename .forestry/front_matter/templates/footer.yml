@@ -9,3 +9,16 @@ fields:
   label: Copyright
   description: B612's copyright information
   default: Copyright © B612
+- name: social_links
+  type: field_group_list
+  fields:
+  - name: link
+    type: include
+    config: {}
+    template: link
+    label: Link
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Social Links
