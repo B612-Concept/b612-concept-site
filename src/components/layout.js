@@ -6,6 +6,13 @@ const LayoutWrapper = styled.main`
   height: 100vh;
 `;
 
-const Layout = ({ children }) => <LayoutWrapper>{children}</LayoutWrapper>;
+const Layout = ({ children }) => {
+  return (
+    <>
+      <LayoutWrapper>{children}</main>
+      <footer>Hello</footer>
+    </>
+  );
+};
 
 export default Layout;
