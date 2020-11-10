@@ -3,10 +3,31 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { H1, P } from '../components/fonts';
 
+const Heading1 = styled(H1)`
+  font-weight: 300;
+`;
+
 const TitleDateWrapper = styled.div`
   display: flex;
   align-items: baseline;
   justify-content: center;
+`;
+
+const FeaturedImage = styled.img`
+  margin: auto;
+  display: flex;
+  justify-content: center;
+`;
+
+const Body = styled.div`
+  position: relative;
+  max-width: 700px;
+  margin-left: 20rem;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 `;
 
 export default function Post({ data }) {
@@ -15,15 +36,15 @@ export default function Post({ data }) {
   return (
     <div>
       <TitleDateWrapper>
-        <div>
-          <P>{date_published}</P>
+        <div style={{ marginRight: 20 }}>
+          <P className="mono">{date_published}</P>
         </div>
         <div>
-          <H1>{title}</H1>
+          <Heading1>{title}</Heading1>
         </div>
       </TitleDateWrapper>
-      <img src={featured_image} />
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <FeaturedImage src={featured_image} />
+      <Body dangerouslySetInnerHTML={{ __html: html }} />
     </div>
   );
 }
