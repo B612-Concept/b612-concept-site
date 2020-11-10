@@ -22,5 +22,18 @@ fields:
     max: 
     labelField: 
   label: Social Links
+- name: navigation_links
+  type: field_group_list
+  fields:
+  - name: link
+    type: include
+    config: {}
+    template: link
+    label: Link
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Navigation Links
 pages:
 - content/footer.md
