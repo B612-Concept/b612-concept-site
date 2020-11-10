@@ -2,13 +2,15 @@
 label: Footer
 hide_body: true
 fields:
-- name: copyright
-  type: text
+- name: headline
+  type: textarea
+  default: ''
   config:
-    required: true
-  label: Copyright
-  description: B612's copyright information
-  default: Copyright © B612
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Headline
 - name: navigation_links
   type: field_group_list
   fields:
@@ -35,5 +37,12 @@ fields:
     max: 
     labelField: label
   label: Social Links
+- name: copyright
+  type: text
+  config:
+    required: true
+  label: Copyright
+  description: B612's copyright information
+  default: Copyright © B612
 pages:
 - content/footer.md
