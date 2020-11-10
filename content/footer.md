@@ -6,5 +6,6 @@ social_links:
 navigation_links:
 - label: Our Mission
   url: "/basic-blog"
+headline: A space for you to journey into your own mind and to just be.
 
 ---
