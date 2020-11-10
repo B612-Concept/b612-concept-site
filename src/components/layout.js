@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+
+import Footer from '@src/components/footer';
+
 import './layout.css';
 
 const LayoutWrapper = styled.main`
@@ -10,7 +13,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <LayoutWrapper>{children}</main>
-      <footer>Hello</footer>
+      <Footer />
     </>
   );
 };
