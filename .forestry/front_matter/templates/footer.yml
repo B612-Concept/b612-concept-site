@@ -9,7 +9,7 @@ fields:
     required: false
     wysiwyg: true
     schema:
-      format: markdown
+      format: html
   label: Headline
 - name: navigation_links
   type: field_group_list
