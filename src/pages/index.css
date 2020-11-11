@@ -1,4 +1,5 @@
 @import '../fonts.css';
+@import '../reset.css';
 
 body {
   min-height: 100vh;
@@ -7,4 +8,12 @@ body {
 
   background-image: url('/assets/grain.png');
   font-weight: 300;
+}
+
+*:focus {
+  outline: none;
+}
+
+button:hover {
+  cursor: pointer;
 }
