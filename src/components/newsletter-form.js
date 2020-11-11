@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import flags, { data, US } from 'emoji-flags';
 
-import { franklinGothic, inputMono } from '@src/styles';
+import { inputMono } from '@src/styles';
 
 const border = '1px solid black';
 
