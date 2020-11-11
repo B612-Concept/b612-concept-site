@@ -2,8 +2,9 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Link from '@src/components/link';
+import NewsletterForm from '@src/components/newsletter-form';
 
-const Footer = () => {
+const Footer = ({ className }) => {
   const {
     markdownRemark: {
       frontmatter: {
@@ -35,9 +36,10 @@ const Footer = () => {
   `);
 
   return (
-    <footer>
+    <footer className={className}>
       <h3>{headline}</h3>
       <p dangerouslySetInnerHTML={{ __html: newsletter_description }} />
+      <NewsletterForm />
       <p>{copyright}</p>
       <div>
         {navigation_links.map(({ label, url }) => (
