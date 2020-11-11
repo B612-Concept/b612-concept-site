@@ -9,17 +9,21 @@ const border = '1px solid black';
 const FormWrapper = styled.form`
   display: flex;
   flex-direction: row;
+  width: fit-content;
 `;
 
 const CountriesWrapper = styled.div`
   position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
+
+  font-size: 24px;
   border: ${border};
   border-left: 0;
-  font-size: 24px;
+
+  width: 80px;
 
   select {
     position: absolute;
@@ -42,6 +46,7 @@ const ButtonWrapper = styled.button`
   padding: 20px;
   font-family: ${inputMono};
   border: ${border};
+
   background-color: black;
   color: white;
 `;
@@ -52,7 +57,6 @@ const NewsletterForm = ({ className }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(email, country);
   };
 
   return (
