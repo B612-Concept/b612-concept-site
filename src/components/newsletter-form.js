@@ -40,6 +40,7 @@ const InputWrapper = styled.input`
   padding: 20px;
   font-family: ${inputMono};
   border: ${border};
+  width: 300px;
 `;
 
 const ButtonWrapper = styled.button`

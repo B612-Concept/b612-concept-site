@@ -3,12 +3,37 @@ import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import Link from '@src/components/link';
+import { H2 } from '@src/components/fonts';
 import NewsletterForm from '@src/components/newsletter-form';
 import { inputMono } from '@src/styles';
 
-const LinksWrapper = styled.div`
+const FooterWrapper = styled.footer`
   padding: 20px;
+`;
+
+const CTAWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  h2 {
+    width: 50%;
+  }
+`;
+
+const NewsletterWrapper = styled.div`
+  grid-area: b;
+
+  p {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 20px;
+  }
+`;
+
+const LinksWrapper = styled.div`
   font-family: ${inputMono};
+  grid-area: c;
 `;
 
 const UnderlineWrapper = styled.div`
@@ -61,10 +86,14 @@ const Footer = ({ className }) => {
   `);
 
   return (
-    <footer className={className}>
-      <h3>{headline}</h3>
-      <p dangerouslySetInnerHTML={{ __html: newsletter_description }} />
-      <NewsletterForm />
+    <FooterWrapper className={className}>
+      <CTAWrapper>
+        <H2>{headline}</H2>
+        <NewsletterWrapper>
+          <p dangerouslySetInnerHTML={{ __html: newsletter_description }} />
+          <NewsletterForm />
+        </NewsletterWrapper>
+      </CTAWrapper>
       <LinksWrapper>
         <div>
           {navigation_links.map(({ label, url }) => (
@@ -82,7 +111,7 @@ const Footer = ({ className }) => {
           </SocialLinksWrapper>
         </UnderlineWrapper>
       </LinksWrapper>
-    </footer>
+    </FooterWrapper>
   );
 };
 
