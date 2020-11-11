@@ -7,6 +7,7 @@ import './layout.css';
 
 const LayoutWrapper = styled.main`
   height: 100vh;
+  margin-bottom: 100px;
 `;
 
 const Layout = ({ children }) => {
