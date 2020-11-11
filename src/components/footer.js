@@ -41,8 +41,18 @@ const UnderlineWrapper = styled.div`
   grid-template-columns: repeat(3, 1fr);
 `;
 
+const NavigationLinksWrapper = styled.div`
+  a {
+    margin-right: 40px;
+  }
+`;
+
 const SocialLinksWrapper = styled.div`
   text-align: right;
+
+  a {
+    margin-left: 40px;
+  }
 `;
 
 const ScoutWrapper = styled.p`
@@ -95,11 +105,11 @@ const Footer = ({ className }) => {
         </NewsletterWrapper>
       </CTAWrapper>
       <LinksWrapper>
-        <div>
+        <NavigationLinksWrapper>
           {navigation_links.map(({ label, url }) => (
             <Link url={url}>{label}</Link>
           ))}
-        </div>
+        </NavigationLinksWrapper>
         <Rule />
         <UnderlineWrapper>
           <p>{copyright}</p>
