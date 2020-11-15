@@ -7,6 +7,10 @@ const Heading1 = styled(H1)`
   font-weight: 300;
 `;
 
+const PostWrapper = styled.div`
+  padding: 0.5rem;
+`;
+
 const TitleDateWrapper = styled.div`
   display: flex;
   align-items: baseline;
@@ -17,12 +21,20 @@ const FeaturedImage = styled.img`
   margin: auto;
   display: flex;
   justify-content: center;
+  max-width: 1024px;
+  width: 100%;
+`;
+
+const BodyContainer = styled.div`
+  position: relative;
+  max-width: 1024px;
+  margin: 32px auto;
 `;
 
 const Body = styled.div`
-  position: relative;
-  max-width: 700px;
-  margin-left: 20rem;
+  position: absolute;
+  right: 0;
+  max-width: 644px;
 
   img {
     max-width: 100%;
@@ -34,7 +46,7 @@ export default function Post({ data }) {
   const { frontmatter, html } = data.markdownRemark;
   const { date_published, featured_image, title } = frontmatter;
   return (
-    <div>
+    <PostWrapper>
       <TitleDateWrapper>
         <div style={{ marginRight: 20 }}>
           <P className="mono">{date_published}</P>
@@ -44,8 +56,10 @@ export default function Post({ data }) {
         </div>
       </TitleDateWrapper>
       <FeaturedImage src={featured_image} />
-      <Body dangerouslySetInnerHTML={{ __html: html }} />
-    </div>
+      <BodyContainer>
+        <Body dangerouslySetInnerHTML={{ __html: html }} />
+      </BodyContainer>
+    </PostWrapper>
   );
 }
 export const query = graphql`

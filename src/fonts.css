@@ -41,5 +41,5 @@
 @font-face {
   font-family: 'Input Mono';
   src: url(/fonts/InputMono-Bold.ttf) format('truetype');
-  font-style: bold;
+  font-weight: bold;
 }
