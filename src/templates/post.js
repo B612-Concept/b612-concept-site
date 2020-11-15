@@ -50,6 +50,7 @@ const BodyContainer = styled.div`
   position: relative;
   max-width: 1024px;
   padding-top: 0.5rem;
+  margin: 0 auto;
 
   @media all and (max-width: 766px) {
     display: flex;
