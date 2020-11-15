@@ -122,12 +122,11 @@ export default function Post({ data }) {
     sticky_featured_image,
   } = frontmatter;
 
-  const formattedDate = new window.Date(date_published);
-  const month = formattedDate.toLocaleString('default', { month: 'long' });
-  const day = ordinal(formattedDate.getDay());
-  const year = formattedDate.getFullYear();
-
-  console.log(formattedDate);
+  const formattedDate =
+    typeof window !== 'undefined' && new window.Date(date_published);
+  const month = formattedDate?.toLocaleString('default', { month: 'long' });
+  const day = formattedDate && ordinal(formattedDate.getDay());
+  const year = formattedDate && formattedDate.getFullYear();
 
   return (
     <PostWrapper>
