@@ -24,7 +24,10 @@ const HomePage = ({ data }) => {
 
   return (
     <div>
-      <LandingPage />
+      {/* added styling to keep box center/ should be removed once Layout stuff gets put in */}
+      <div style={{ display: 'grid', placeItems: 'center' }}>
+        <LandingPage />
+      </div>
       {scenesArray.map((value, index) => {
         if (typeof value === 'string' && value !== '') {
           return <Question key={index}>{value}</Question>;
