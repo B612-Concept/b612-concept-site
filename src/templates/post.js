@@ -2,12 +2,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { H1, P } from '../components/fonts';
+import { ordinal } from '../utils/ordinalNumber';
 
 const Heading1 = styled(H1)`
   font-weight: 300;
   margin: 1rem 0 0;
 
-  @media all and (min-width: 650px) {
+  @media all and (min-width: 767px) {
     margin: 3rem 0;
   }
 `;
@@ -17,39 +18,57 @@ const PostWrapper = styled.div`
 `;
 
 const TitleDateWrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column-reverse;
+  min-height: 150px;
 
-  @media all and (min-width: 650px) {
+  @media all and (min-width: 767px) {
     flex-direction: row;
     align-items: baseline;
     justify-content: center;
+    max-width: 1024px;
+    margin: 0 auto;
   }
 `;
 
-const Date = styled.div`
+const Title = styled.div`
+  @media all and (min-width: 1000px) {
+    position: absolute;
+    right: 0;
+    width: 644px;
+    display: flex;
+    align-items: flex-end;
+  }
+`;
+
+const SmallDate = styled.div`
   margin-bottom: 1rem;
 
-  @media all and (min-width: 650px) {
+  @media all and (min-width: 767px) {
     margin-bottom: 0;
     margin-right: 20px;
   }
+
+  @media all and (min-width: 1000px) {
+    display: none;
+  }
 `;
 
-const FeaturedImage = styled.img`
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  max-width: 1024px;
-  width: 100%;
-`;
+const BigDate = styled.div`
+  display: none;
+  margin: 3rem 0;
 
-const StickyImage = styled.img``;
+  @media all and (min-width: 1000px) {
+    display: block;
+    position: absolute;
+    left: -30%;
+  }
+`;
 
 const BodyContainer = styled.div`
   position: relative;
   max-width: 1024px;
-  padding-top: 0.5rem;
   margin: 0 auto;
 
   @media all and (max-width: 766px) {
@@ -58,8 +77,27 @@ const BodyContainer = styled.div`
   }
 `;
 
+const FeaturedImage = styled.img`
+  position: fixed;
+  max-width: 282px;
+  padding-top: 0.5rem;
+
+  @media all and (max-width: 999px) {
+    position: relative;
+    padding-top: 0rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    max-width: 1024px;
+    width: 100%;
+  }
+`;
+
 const Body = styled.div`
-  @media all and (min-width: 767px) {
+  padding-top: 0.5rem;
+  margin-bottom: 128px;
+
+  @media all and (min-width: 1000px) {
     position: absolute;
     right: 0;
     max-width: 644px;
@@ -68,6 +106,10 @@ const Body = styled.div`
   img {
     max-width: 100%;
     height: auto;
+  }
+
+  p {
+    font-weight: 300;
   }
 `;
 
@@ -79,19 +121,31 @@ export default function Post({ data }) {
     featured_image,
     sticky_featured_image,
   } = frontmatter;
+
+  const formattedDate = new window.Date(date_published);
+  const month = formattedDate.toLocaleString('default', { month: 'long' });
+  const day = ordinal(formattedDate.getDay());
+  const year = formattedDate.getFullYear();
+
+  console.log(formattedDate);
+
   return (
     <PostWrapper>
       <TitleDateWrapper>
-        <Date>
-          <P className="mono">{date_published}</P>
-        </Date>
-        <div>
+        <SmallDate>
+          <P className="mono">{`${month} ${day}, ${year}`}</P>
+        </SmallDate>
+        <Title>
+          <BigDate>
+            <P className="mono">{`${month} ${day}, ${year}`}</P>
+          </BigDate>
           <Heading1>{title}</Heading1>
-        </div>
+        </Title>
       </TitleDateWrapper>
-      {featured_image && <FeaturedImage src={featured_image} />}
       <BodyContainer>
-        {sticky_featured_image && <StickyImage src={sticky_featured_image} />}
+        {featured_image && (
+          <FeaturedImage src={featured_image} sticky={sticky_featured_image} />
+        )}
         <Body dangerouslySetInnerHTML={{ __html: html }} />
       </BodyContainer>
     </PostWrapper>
