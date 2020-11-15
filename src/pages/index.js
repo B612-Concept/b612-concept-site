@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import './index.css';
 import { franklinGothic, inputMono } from '@src/styles.js';
+import LandingPage from '../components/landingPage';
 
 const Question = styled.div`
   margin: 2rem auto;
@@ -23,6 +24,7 @@ const HomePage = ({ data }) => {
 
   return (
     <div>
+      <LandingPage />
       {scenesArray.map((value, index) => {
         if (typeof value === 'string' && value !== '') {
           return <Question key={index}>{value}</Question>;
