@@ -51,7 +51,7 @@ const BodyContainer = styled.div`
   max-width: 1024px;
   padding-top: 0.5rem;
 
-  @media all and (min-width: 767px) {
+  @media all and (max-width: 766px) {
     display: flex;
     flex-direction: column;
   }
