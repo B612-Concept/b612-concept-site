@@ -78,6 +78,16 @@ const BodyContainer = styled.div`
 `;
 
 const FeaturedImage = styled.img`
+  position: relative;
+  padding-top: 0rem;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  max-width: 1024px;
+  width: 100%;
+`;
+
+const StickyFeaturedImage = styled.img`
   position: fixed;
   max-width: 282px;
   padding-top: 0.5rem;
@@ -142,9 +152,11 @@ export default function Post({ data }) {
         </Title>
       </TitleDateWrapper>
       <BodyContainer>
-        {featured_image && (
-          <FeaturedImage src={featured_image} sticky={sticky_featured_image} />
-        )}
+        {featured_image && sticky_featured_image ? (
+          <StickyFeaturedImage src={featured_image} />
+        ) : featured_image ? (
+          <FeaturedImage src={featured_image} />
+        ) : null}
         <Body dangerouslySetInnerHTML={{ __html: html }} />
       </BodyContainer>
     </PostWrapper>

@@ -1,7 +1,6 @@
 ---
 date_published: 11/07/2020
 title: Basic Blog
-featured_image: '/uploads/24p3gdlblajw2qocoyv4655uyq.jpg'
 sticky_featured_image: false
 ---
 
