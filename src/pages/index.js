@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import './index.css';
 import { franklinGothic, inputMono } from '@src/styles.js';
 
 const Question = styled.div`
@@ -22,16 +21,18 @@ const HomePage = ({ data }) => {
   const scenesArray = Object.values(scenes.frontmatter);
 
   return (
-    <div>
-      {scenesArray.map((value, index) => {
-        if (typeof value === 'string' && value !== '') {
-          return <Question key={index}>{value}</Question>;
-        } else if (typeof value.title === 'string') {
-          return <Scene key={index}>{value.title}</Scene>;
-        } else {
-          return null;
-        }
-      })}
+    <div style={{ display: 'grid', placeItems: 'center', minHeight: '100vh' }}>
+      <div>
+        {scenesArray.map((value, index) => {
+          if (typeof value === 'string' && value !== '') {
+            return <Question key={index}>{value}</Question>;
+          } else if (typeof value.title === 'string') {
+            return <Scene key={index}>{value.title}</Scene>;
+          } else {
+            return null;
+          }
+        })}
+      </div>
     </div>
   );
 };
