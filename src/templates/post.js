@@ -132,8 +132,7 @@ export default function Post({ data }) {
     sticky_featured_image,
   } = frontmatter;
 
-  const formattedDate =
-    typeof window !== 'undefined' && new window.Date(date_published);
+  const formattedDate = new Date(date_published);
   const month = formattedDate?.toLocaleString('default', { month: 'long' });
   const day = formattedDate && ordinal(formattedDate.getDay());
   const year = formattedDate && formattedDate.getFullYear();
@@ -152,11 +151,12 @@ export default function Post({ data }) {
         </Title>
       </TitleDateWrapper>
       <BodyContainer>
-        {featured_image && (
-          sticky_featured_image ?
-          <StickyFeaturedImage src={featured_image} />
-          : <FeaturedImage src={featured_image} />
-         )}
+        {featured_image &&
+          (sticky_featured_image ? (
+            <StickyFeaturedImage src={featured_image} />
+          ) : (
+            <FeaturedImage src={featured_image} />
+          ))}
         <Body dangerouslySetInnerHTML={{ __html: html }} />
       </BodyContainer>
     </PostWrapper>
