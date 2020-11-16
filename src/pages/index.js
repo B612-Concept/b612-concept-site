@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import './index.css';
 import { franklinGothic, inputMono } from '@src/styles.js';
 import LandingPage from '@src/components/LandingPage';
 
