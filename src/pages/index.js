@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import './index.css';
 import { franklinGothic, inputMono } from '@src/styles.js';
-import LandingPage from '@src/components/LandingPage';
+import LandingPage from '@src/components/landingPage.js';
 
 const Question = styled.div`
   margin: 2rem auto;
