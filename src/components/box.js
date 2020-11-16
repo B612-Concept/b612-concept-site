@@ -8,12 +8,15 @@ export const Box = styled.div`
   // Tablet / Desktop should behave the same.
   // This is for the smallest of phones to manipulate the box
   @media all and (min-width: 499px) {
-    width: 400px;
-    height: 160px;
+    max-width: 600px;
+    width: 80vw;
+    height: 200px;
   }
 
   @media all and (max-width: 500px) {
     width: 80vw;
-    height: 160px;
+    height: 200px;
   }
 `;
+
+export default Box;
