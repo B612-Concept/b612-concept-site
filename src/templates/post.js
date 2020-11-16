@@ -152,11 +152,11 @@ export default function Post({ data }) {
         </Title>
       </TitleDateWrapper>
       <BodyContainer>
-        {featured_image && sticky_featured_image ? (
+        {featured_image && (
+          sticky_featured_image ?
           <StickyFeaturedImage src={featured_image} />
-        ) : featured_image ? (
-          <FeaturedImage src={featured_image} />
-        ) : null}
+          : <FeaturedImage src={featured_image} />
+         )}
         <Body dangerouslySetInnerHTML={{ __html: html }} />
       </BodyContainer>
     </PostWrapper>
