@@ -13,7 +13,7 @@ const LayoutWrapper = styled.main`
 const Layout = ({ children }) => {
   return (
     <>
-      <LayoutWrapper>{children}</main>
+      <LayoutWrapper>{children}</LayoutWrapper>
       <Footer />
     </>
   );

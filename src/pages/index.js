@@ -9,13 +9,6 @@ const IndexPageWrapper = styled.div`
   height: 100%;
 `;
 
-const Question = styled.div`
-  margin: 2rem auto;
-  font-family: ${franklinGothic};
-  font-style: italic;
-  font-weight: 500;
-`;
-
 const IndexPage = ({ data }) => {
   const { question } = data.markdownRemark.frontmatter;
 
