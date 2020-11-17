@@ -1,8 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import { H1, P } from '../components/fonts';
-import { ordinal } from '../utils/ordinalNumber';
+
+import { H1, P } from '@src/components/fonts';
+import { formatDate } from '@src/utils';
 
 const Heading1 = styled(H1)`
   font-weight: 300;
@@ -132,20 +133,17 @@ export default function Post({ data }) {
     sticky_featured_image,
   } = frontmatter;
 
-  const formattedDate = new Date(date_published);
-  const month = formattedDate?.toLocaleString('default', { month: 'long' });
-  const day = formattedDate && ordinal(formattedDate.getDay());
-  const year = formattedDate && formattedDate.getFullYear();
+  const date = formatDate(date_published);
 
   return (
     <PostWrapper>
       <TitleDateWrapper>
         <SmallDate>
-          <P className="mono">{`${month} ${day}, ${year}`}</P>
+          <P className="mono">{date}</P>
         </SmallDate>
         <Title>
           <BigDate>
-            <P className="mono">{`${month} ${day}, ${year}`}</P>
+            <P className="mono">{date}</P>
           </BigDate>
           <Heading1>{title}</Heading1>
         </Title>
