@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { franklinGothic, inputMono } from '@src/styles.js';
-import LandingPage from '@src/components/landingPage.js';
+import LandingPage from '@src/components/landingPage';
 
 const Question = styled.div`
   margin: 2rem auto;
