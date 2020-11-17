@@ -1,4 +1,15 @@
 import styled from 'styled-components';
+import { franklinGothic, inputMono } from '@src/styles.js';
+
+export const TitleH1 = styled.h1`
+  font-size: 36px;
+  font-weight: 100;
+  font-family: ${franklinGothic};
+
+  @media (max-width: 420px) {
+    font-size: 28px;
+  }
+`;
 
 export const H1 = styled.h1`
   font-size: 3em;
