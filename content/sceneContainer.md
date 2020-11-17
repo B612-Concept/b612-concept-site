@@ -1,5 +1,5 @@
 ---
-question: 'Bonjour. '
+question: What does space mean to you?
 reflection_scene:
   body: Sample Body
   title: A space to reflect and think freely?
