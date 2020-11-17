@@ -1,52 +1,30 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import { franklinGothic, inputMono } from '@src/styles.js';
-import LandingPage from '@src/components/landingPage';
+import Question from '@src/components/question';
 
-const Question = styled.div`
-  margin: 2rem auto;
-  font-family: ${franklinGothic};
-  font-style: italic;
-  font-weight: 500;
+const IndexPageWrapper = styled.div`
+  display: grid;
+  place-items: center;
+  height: 100%;
 `;
 
-const Scene = styled.div`
-  margin: 2rem auto;
-  font-family: ${inputMono};
-  font-style: normal;
-`;
-
-const HomePage = ({ data }) => {
-  const scenes = data.markdownRemark;
-  const scenesArray = Object.values(scenes.frontmatter);
+const IndexPage = ({ data }) => {
+  const { question } = data.markdownRemark.frontmatter;
 
   return (
-    <div>
-      {/* added styling to keep box center/ should be removed once Layout stuff gets put in */}
-      <div style={{ display: 'grid', placeItems: 'center' }}>
-        <LandingPage />
-      </div>
-      {scenesArray.map((value, index) => {
-        if (typeof value === 'string' && value !== '') {
-          return <Question key={index}>{value}</Question>;
-        } else if (typeof value.title === 'string') {
-          return <Scene key={index}>{value.title}</Scene>;
-        } else {
-          return null;
-        }
-      })}
-    </div>
+    <IndexPageWrapper>
+      <Question question={question} />
+    </IndexPageWrapper>
   );
 };
 
-export default HomePage;
+export default IndexPage;
 
 export const query = graphql`
-  query HomePageQuery {
+  query IndexPageQuery {
     markdownRemark(fields: { sourceName: { eq: "scenes" } }) {
       frontmatter {
-        title
         question
         calm_scene {
           body
