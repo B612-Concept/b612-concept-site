@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { franklinGothic, inputMono } from '@src/styles.js';
+import { franklinGothic, inputMono } from '@src/styles';
 
 export const TitleH1 = styled.h1`
   font-size: 36px;

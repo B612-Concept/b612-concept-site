@@ -8,7 +8,7 @@ import NewsletterForm from '@src/components/newsletter-form';
 import { inputMono } from '@src/styles';
 
 const FooterWrapper = styled.footer`
-  padding: 20px;
+  padding: 0 20px;
 `;
 
 const CTAWrapper = styled.div`
