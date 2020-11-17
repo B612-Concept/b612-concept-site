@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { franklinGothic, inputMono } from '@src/styles.js';
+import LandingPage from '@src/components/landingPage';
 
 const Question = styled.div`
   margin: 2rem auto;
@@ -21,18 +22,20 @@ const HomePage = ({ data }) => {
   const scenesArray = Object.values(scenes.frontmatter);
 
   return (
-    <div style={{ display: 'grid', placeItems: 'center', minHeight: '100vh' }}>
-      <div>
-        {scenesArray.map((value, index) => {
-          if (typeof value === 'string' && value !== '') {
-            return <Question key={index}>{value}</Question>;
-          } else if (typeof value.title === 'string') {
-            return <Scene key={index}>{value.title}</Scene>;
-          } else {
-            return null;
-          }
-        })}
+    <div>
+      {/* added styling to keep box center/ should be removed once Layout stuff gets put in */}
+      <div style={{ display: 'grid', placeItems: 'center' }}>
+        <LandingPage />
       </div>
+      {scenesArray.map((value, index) => {
+        if (typeof value === 'string' && value !== '') {
+          return <Question key={index}>{value}</Question>;
+        } else if (typeof value.title === 'string') {
+          return <Scene key={index}>{value.title}</Scene>;
+        } else {
+          return null;
+        }
+      })}
     </div>
   );
 };
