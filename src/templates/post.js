@@ -109,8 +109,8 @@ const Body = styled.div`
   margin-bottom: 128px;
 
   @media all and (min-width: 1000px) {
-    position: absolute;
-    right: 0;
+    margin-right: 0;
+    margin-left: auto;
     max-width: 644px;
   }
 
