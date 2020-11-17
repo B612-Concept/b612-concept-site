@@ -1,7 +1,7 @@
 ---
 date_published: 11/07/2020
 title: Sticky Featured Image
-featured_image: "/uploads/24p3gdlblajw2qocoyv4655uyq.jpg"
+featured_image: "/uploads/frame-3.png"
 sticky_featured_image: true
 
 ---
