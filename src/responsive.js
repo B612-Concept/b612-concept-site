@@ -1,6 +1,8 @@
 const breakpoints = [
   ['mobile', '320px'],
+  ['tabletSm', '500px'],
   ['tablet', '768px'],
+  ['tabletLg', '1000px'],
   ['desktop', '1280px'],
 ];
 

@@ -5,11 +5,13 @@ import styled from 'styled-components';
 import { H1, P } from '@src/components/fonts';
 import { formatDate } from '@src/utils';
 
+import { min, max } from '@src/responsive';
+
 const Heading1 = styled(H1)`
   font-weight: 300;
   margin: 1rem 0 0;
 
-  @media all and (min-width: 767px) {
+  @media all and ${min.tablet} {
     margin: 3rem 0;
   }
 `;
@@ -24,7 +26,7 @@ const TitleDateWrapper = styled.div`
   flex-direction: column-reverse;
   min-height: 150px;
 
-  @media all and (min-width: 767px) {
+  @media all and ${min.tablet} {
     flex-direction: row;
     align-items: baseline;
     justify-content: center;
@@ -34,7 +36,7 @@ const TitleDateWrapper = styled.div`
 `;
 
 const Title = styled.div`
-  @media all and (min-width: 1000px) {
+  @media all and ${min.tabletLg} {
     position: absolute;
     right: 0;
     width: 644px;
@@ -46,12 +48,12 @@ const Title = styled.div`
 const SmallDate = styled.div`
   margin-bottom: 1rem;
 
-  @media all and (min-width: 767px) {
+  @media all and ${min.tablet} {
     margin-bottom: 0;
     margin-right: 20px;
   }
 
-  @media all and (min-width: 1000px) {
+  @media all and ${min.tabletLg} {
     display: none;
   }
 `;
@@ -60,7 +62,7 @@ const BigDate = styled.div`
   display: none;
   margin: 3rem 0;
 
-  @media all and (min-width: 1000px) {
+  @media all and ${min.tabletLg} {
     display: block;
     position: absolute;
     left: -30%;
@@ -72,7 +74,7 @@ const BodyContainer = styled.div`
   max-width: 1024px;
   margin: 0 auto;
 
-  @media all and (max-width: 766px) {
+  @media all and ${max.tablet} {
     display: flex;
     flex-direction: column;
   }
@@ -93,7 +95,7 @@ const StickyFeaturedImage = styled.img`
   max-width: 282px;
   padding-top: 0.5rem;
 
-  @media all and (max-width: 999px) {
+  @media all and ${max.tabletLg} {
     position: relative;
     padding-top: 0rem;
     margin: auto;
@@ -108,7 +110,7 @@ const Body = styled.div`
   padding-top: 0.5rem;
   margin-bottom: 128px;
 
-  @media all and (min-width: 1000px) {
+  @media all and ${min.tabletLg} {
     margin-right: 0;
     margin-left: auto;
     max-width: 644px;
