@@ -1,3 +1,5 @@
+import { useMediaQuery } from '@react-hook/media-query';
+
 const breakpoints = [
   ['mobile', '320px'],
   ['tabletSm', '500px'],
@@ -45,3 +47,8 @@ export const devices = breakpoints.reduce((acc, [name, size], i) => {
 
   return { ...acc, [name]: `${minQuery} ${maxQuery}` };
 }, {});
+
+export const Responsive = ({ query, children }) => {
+  const match = useMediaQuery(query);
+  return match ? children : null;
+};
