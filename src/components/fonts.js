@@ -17,6 +17,7 @@ export const H1 = styled.h1`
 
 export const H2 = styled.h2`
   font-size: 2em;
+  font-weight: 300;
   line-height: 1.3em;
 `;
 

@@ -48,7 +48,11 @@ const NavigationLinksWrapper = styled.div`
 `;
 
 const SocialLinksWrapper = styled.div`
-  text-align: right;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  justify-content: flex-end;
 
   a {
     margin-left: 40px;
@@ -60,7 +64,7 @@ const ScoutWrapper = styled.p`
 `;
 
 const Rule = styled.hr`
-  margin: 20px 0;
+  margin-top: 20px;
   opacity: 30%;
 `;
 
