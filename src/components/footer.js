@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import Link from '@src/components/link';
 import { H2 } from '@src/components/fonts';
 import NewsletterForm from '@src/components/newsletter-form';
+
+import { max, min } from '@src/responsive';
 import { inputMono } from '@src/styles';
 
 const FooterWrapper = styled.footer`
@@ -16,8 +18,14 @@ const CTAWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
 
-  h2 {
-    width: 50%;
+  @media all and ${min.tablet} {
+    h2 {
+      width: 50%;
+    }
+  }
+
+  @media all and ${max.tablet} {
+    flex-direction: column;
   }
 `;
 
@@ -42,8 +50,17 @@ const UnderlineWrapper = styled.div`
 `;
 
 const NavigationLinksWrapper = styled.div`
+  display: flex;
+
   a {
     margin-right: 40px;
+  }
+
+  @media ${max.tablet} {
+    flex-direction: column;
+    a {
+      margin: 10px 0;
+    }
   }
 `;
 
@@ -110,8 +127,10 @@ const Footer = ({ className }) => {
       </CTAWrapper>
       <LinksWrapper>
         <NavigationLinksWrapper>
-          {navigation_links.map(({ label, url }) => (
-            <Link url={url}>{label}</Link>
+          {navigation_links.map(({ label, url }, i) => (
+            <Link key={i} url={url}>
+              {label}
+            </Link>
           ))}
         </NavigationLinksWrapper>
         <Rule />
@@ -119,8 +138,10 @@ const Footer = ({ className }) => {
           <p>{copyright}</p>
           <ScoutWrapper>Made with ❤️ by Scout</ScoutWrapper>
           <SocialLinksWrapper>
-            {social_links.map(({ label, url }) => (
-              <Link url={url}>{label}</Link>
+            {social_links.map(({ label, url }, i) => (
+              <Link key={i} url={url}>
+                {label}
+              </Link>
             ))}
           </SocialLinksWrapper>
         </UnderlineWrapper>
