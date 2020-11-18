@@ -26,22 +26,27 @@ const CTAWrapper = styled.div`
 
   @media all and ${max.tablet} {
     flex-direction: column;
+    margin-bottom: 40px;
   }
 `;
 
 const NewsletterWrapper = styled.div`
-  grid-area: b;
-
   p {
     font-size: 24px;
     line-height: 32px;
     margin-bottom: 20px;
   }
+
+  @media all and ${max.tablet} {
+    p {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
 `;
 
 const LinksWrapper = styled.div`
   font-family: ${inputMono};
-  grid-area: c;
 `;
 
 const UnderlineWrapper = styled.div`
@@ -58,8 +63,9 @@ const NavigationLinksWrapper = styled.div`
 
   @media ${max.tablet} {
     flex-direction: column;
+
     a {
-      margin: 10px 0;
+      margin: 5px 0;
     }
   }
 `;
