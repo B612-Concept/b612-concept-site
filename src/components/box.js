@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { max, min } from '@src/responsive';
+
 export const Box = styled.div`
   background-color: #fff;
   font-size: 20px;
@@ -7,13 +9,13 @@ export const Box = styled.div`
 
   // Tablet / Desktop should behave the same.
   // This is for the smallest of phones to manipulate the box
-  @media all and (min-width: 499px) {
+  @media all and ${min.tabletSm} {
     max-width: 600px;
     width: 80vw;
     height: 200px;
   }
 
-  @media all and (max-width: 500px) {
+  @media all and ${max.tabletSm} {
     width: 80vw;
     height: 200px;
   }

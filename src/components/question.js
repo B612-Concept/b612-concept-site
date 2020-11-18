@@ -3,6 +3,8 @@ import Box from './box';
 import styled from 'styled-components';
 import { TitleH1 } from '../components/fonts';
 
+import { min } from '@src/responsive';
+
 const QuestionBox = styled(Box)`
   display: flex;
   align-items: flex-end;
@@ -15,7 +17,7 @@ const QuestionTitle = styled(TitleH1)`
 const TitleWrapper = styled.div`
   margin: 20px;
 
-  @media (min-width: 768px) {
+  @media ${min.tablet} {
     width: 50%;
   }
 `;
