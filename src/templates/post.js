@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { H1, P } from '@src/components/fonts';
 import { formatDate } from '@src/utils';
 
-import { min, max } from '@src/responsive';
+import { Responsive, min, max } from '@src/responsive';
 
 const Heading1 = styled(H1)`
   font-weight: 300;
@@ -52,21 +52,13 @@ const SmallDate = styled.div`
     margin-bottom: 0;
     margin-right: 20px;
   }
-
-  @media all and ${min.tabletLg} {
-    display: none;
-  }
 `;
 
 const BigDate = styled.div`
-  display: none;
   margin: 3rem 0;
-
-  @media all and ${min.tabletLg} {
-    display: block;
-    position: absolute;
-    left: -30%;
-  }
+  display: block;
+  position: absolute;
+  left: -30%;
 `;
 
 const BodyContainer = styled.div`
@@ -140,13 +132,17 @@ export default function Post({ data }) {
   return (
     <PostWrapper>
       <TitleDateWrapper>
-        <SmallDate>
-          <P className="mono">{date}</P>
-        </SmallDate>
-        <Title>
-          <BigDate>
+        <Responsive query={max.tabletLg}>
+          <SmallDate>
             <P className="mono">{date}</P>
-          </BigDate>
+          </SmallDate>
+        </Responsive>
+        <Title>
+          <Responsive query={min.tabletLg}>
+            <BigDate>
+              <P className="mono">{date}</P>
+            </BigDate>
+          </Responsive>
           <Heading1>{title}</Heading1>
         </Title>
       </TitleDateWrapper>
