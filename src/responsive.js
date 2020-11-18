@@ -48,6 +48,9 @@ export const devices = breakpoints.reduce((acc, [name, size], i) => {
   return { ...acc, [name]: `${minQuery} ${maxQuery}` };
 }, {});
 
+/**
+ * Render children only if query media matches.
+ */
 export const Responsive = ({ query, children }) => {
   const match = useMediaQuery(query);
   return match ? children : null;
