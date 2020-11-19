@@ -1,11 +1,11 @@
 import { useMediaQuery } from '@react-hook/media-query';
 
 const breakpoints = [
-  ['mobile', '320px'],
-  ['tabletSm', '500px'],
-  ['tablet', '768px'],
-  ['tabletLg', '1000px'],
-  ['desktop', '1280px'],
+  ['mobile', 320],
+  ['tabletSm', 500],
+  ['tablet', 768],
+  ['tabletLg', 1000],
+  ['desktop', 1280],
 ];
 
 /**
@@ -16,7 +16,7 @@ const breakpoints = [
 export const min = breakpoints.reduce(
   (acc, [name, size]) => ({
     ...acc,
-    [name]: `(min-width: ${size})`,
+    [name]: `(min-width: ${size}px)`,
   }),
   {}
 );
@@ -29,7 +29,7 @@ export const min = breakpoints.reduce(
 export const max = breakpoints.reduce(
   (acc, [name, size]) => ({
     ...acc,
-    [name]: `(max-width: ${size})`,
+    [name]: `(max-width: ${size - 1}px)`,
   }),
   {}
 );
