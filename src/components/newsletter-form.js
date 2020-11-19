@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import flags, { data, US } from 'emoji-flags';
 
 import { inputMono } from '@src/styles';
+import { max } from '@src/responsive';
 
 const border = '1px solid black';
 
@@ -10,6 +11,15 @@ const FormWrapper = styled.form`
   display: flex;
   flex-direction: row;
   width: fit-content;
+
+  @media all and ${max.tablet} {
+    flex-direction: column;
+  }
+`;
+
+const FieldsWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 
 const CountriesWrapper = styled.div`
@@ -23,7 +33,7 @@ const CountriesWrapper = styled.div`
   border: ${border};
   border-left: 0;
 
-  width: 80px;
+  width: 100px;
 
   select {
     position: absolute;
@@ -34,6 +44,10 @@ const CountriesWrapper = styled.div`
     width: 100%;
     height: 100%;
   }
+
+  @media all and ${max.tablet} {
+    border-radius: 0 10px 10px 0;
+  }
 `;
 
 const InputWrapper = styled.input`
@@ -41,7 +55,8 @@ const InputWrapper = styled.input`
   font-family: ${inputMono};
   border: ${border};
   border-radius: 10px 0 0 10px;
-  width: 300px;
+
+  width: 100%;
 `;
 
 const ButtonWrapper = styled.button`
@@ -64,21 +79,23 @@ const NewsletterForm = ({ className }) => {
 
   return (
     <FormWrapper className={className} onSubmit={onSubmit}>
-      <InputWrapper
-        placeholder="Email address"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <CountriesWrapper>
-        <div>{country.emoji}</div>
-        <select onChange={(e) => setCountry(flags[e.target.value])}>
-          {data.map(({ emoji, name, code }) => (
-            <option key={code} value={code}>
-              {name}
-            </option>
-          ))}
-        </select>
-      </CountriesWrapper>
+      <FieldsWrapper>
+        <InputWrapper
+          placeholder="Email address"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <CountriesWrapper>
+          <div>{country.emoji}</div>
+          <select onChange={(e) => setCountry(flags[e.target.value])}>
+            {data.map(({ emoji, name, code }) => (
+              <option key={code} value={code}>
+                {name}
+              </option>
+            ))}
+          </select>
+        </CountriesWrapper>
+      </FieldsWrapper>
       <ButtonWrapper type="submit">Subscribe</ButtonWrapper>
     </FormWrapper>
   );
