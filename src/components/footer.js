@@ -6,7 +6,7 @@ import Link from '@src/components/link';
 import { H2 } from '@src/components/fonts';
 import NewsletterForm from '@src/components/newsletter-form';
 
-import { max, min } from '@src/responsive';
+import { Responsive, max, min } from '@src/responsive';
 import { inputMono } from '@src/styles';
 
 const FooterWrapper = styled.footer`
@@ -50,8 +50,19 @@ const LinksWrapper = styled.div`
 `;
 
 const UnderlineWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  @media all and ${min.tablet} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media all and ${max.tablet} {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      margin: 5px 0;
+    }
+  }
 `;
 
 const NavigationLinksWrapper = styled.div`
@@ -83,7 +94,9 @@ const SocialLinksWrapper = styled.div`
 `;
 
 const ScoutWrapper = styled.p`
-  text-align: center;
+  @media all and ${min.tablet} {
+    text-align: center;
+  }
 `;
 
 const Rule = styled.hr`
@@ -143,13 +156,15 @@ const Footer = ({ className }) => {
         <UnderlineWrapper>
           <p>{copyright}</p>
           <ScoutWrapper>Made with ❤️ by Scout</ScoutWrapper>
-          <SocialLinksWrapper>
-            {social_links.map(({ label, url }, i) => (
-              <Link key={i} url={url}>
-                {label}
-              </Link>
-            ))}
-          </SocialLinksWrapper>
+          <Responsive query={min.tablet}>
+            <SocialLinksWrapper>
+              {social_links.map(({ label, url }, i) => (
+                <Link key={i} url={url}>
+                  {label}
+                </Link>
+              ))}
+            </SocialLinksWrapper>
+          </Responsive>
         </UnderlineWrapper>
       </LinksWrapper>
     </FooterWrapper>
