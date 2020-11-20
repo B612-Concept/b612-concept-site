@@ -86,10 +86,22 @@ const SocialLinksWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  justify-content: flex-end;
 
-  a {
-    margin-left: 40px;
+  @media all and ${min.tablet} {
+    a {
+      margin-left: 40px;
+    }
+  }
+
+  @media all and ${max.tablet} {
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin-bottom: 40px;
+
+    a {
+      margin: 5px 0;
+    }
   }
 `;
 
@@ -102,6 +114,10 @@ const ScoutWrapper = styled.p`
 const Rule = styled.hr`
   margin-top: 20px;
   opacity: 30%;
+
+  @media all and ${max.tablet} {
+    margin: 10px 0;
+  }
 `;
 
 const Footer = ({ className }) => {
@@ -153,6 +169,16 @@ const Footer = ({ className }) => {
           ))}
         </NavigationLinksWrapper>
         <Rule />
+        <Responsive query={max.tablet}>
+          <SocialLinksWrapper>
+            {social_links.map(({ label, url }, i) => (
+              <Link key={i} url={url}>
+                {label}
+              </Link>
+            ))}
+          </SocialLinksWrapper>
+        </Responsive>
+
         <UnderlineWrapper>
           <p>{copyright}</p>
           <ScoutWrapper>Made with ❤️ by Scout</ScoutWrapper>
