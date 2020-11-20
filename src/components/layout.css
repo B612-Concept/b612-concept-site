@@ -14,3 +14,7 @@ body {
     'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', Monaco,
     'Courier New', Courier, monospace;
 }
+
+button:hover {
+  cursor: pointer;
+}
