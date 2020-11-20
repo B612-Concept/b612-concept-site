@@ -23,10 +23,10 @@ const FeetContainer = styled.div`
     bottom: -90px;
   }
 
-    @media all and ${max.tabletSm} {
-        width: 80px;
-        height: 80px;
-        bottom: -35px;
+  @media all and ${max.tabletSm} {
+    width: 80px;
+    height: 80px;
+    bottom: -35px;
   }
 `;
 
