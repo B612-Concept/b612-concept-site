@@ -37,6 +37,18 @@ const NewsletterWrapper = styled.div`
     margin-bottom: 20px;
   }
 
+  @media all and ${min.tablet} {
+    width: 50%;
+  }
+
+  @media all and ${min.desktop} {
+    width: 40%;
+  }
+
+  @media all and ${min.desktopLg} {
+    width: 30%;
+  }
+
   @media all and ${max.tablet} {
     p {
       font-size: 18px;

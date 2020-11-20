@@ -10,7 +10,7 @@ const border = '1px solid black';
 const FormWrapper = styled.form`
   display: flex;
   flex-direction: row;
-  width: fit-content;
+  width: 100%;
 
   @media all and ${max.tablet} {
     flex-direction: column;
@@ -20,6 +20,7 @@ const FormWrapper = styled.form`
 const FieldsWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  width: 100%;
 `;
 
 const CountriesWrapper = styled.div`
