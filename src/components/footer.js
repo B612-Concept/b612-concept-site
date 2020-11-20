@@ -24,6 +24,12 @@ const CTAWrapper = styled.div`
     }
   }
 
+  @media all and ${min.desktop} {
+    h2 {
+      width: 30%;
+    }
+  }
+
   @media all and ${max.tablet} {
     flex-direction: column;
     margin-bottom: 40px;
@@ -58,6 +64,7 @@ const NewsletterWrapper = styled.div`
 `;
 
 const LinksWrapper = styled.div`
+  margin-top: 40px;
   font-family: ${inputMono};
 `;
 
@@ -115,6 +122,12 @@ const SocialLinksWrapper = styled.div`
       margin: 5px 0;
     }
   }
+`;
+
+const CopyrightWrapper = styled.p`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const ScoutWrapper = styled.p`
@@ -192,7 +205,7 @@ const Footer = ({ className }) => {
         </Responsive>
 
         <UnderlineWrapper>
-          <p>{copyright}</p>
+          <CopyrightWrapper>{copyright}</CopyrightWrapper>
           <ScoutWrapper>Made with ❤️ by Scout</ScoutWrapper>
           <Responsive query={min.tablet}>
             <SocialLinksWrapper>
