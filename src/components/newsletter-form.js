@@ -67,6 +67,11 @@ const ButtonWrapper = styled.button`
 
   background-color: black;
   color: white;
+
+  @media all and ${max.tablet} {
+    border-radius: 10px;
+    margin-top: 10px;
+  }
 `;
 
 const NewsletterForm = ({ className }) => {
