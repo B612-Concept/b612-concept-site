@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Question from '@src/components/question';
-import SensesScene from '../components/sensesScene';
+import SensesScene from '@src/components/sensesScene';
 
 const IndexPageWrapper = styled.div`
   display: grid;

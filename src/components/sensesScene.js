@@ -7,17 +7,21 @@ const QuestionBox = styled(Box)`
   position: relative;
 `;
 
-const FeetContainer = styled.div`
-  width: 100px;
-  height: 100px
+const Waves = styled.img`
+  max-height: 200px;
+  max-width: 600px;
+  width: auto;
+  height: auto;
+`;
 
-  justify-content: center;
+const Feet = styled.img`
+  width: 100px;
+
   position: absolute;
-  margin-left: auto;
-  margin-right: auto;
   left: 0;
   right: 0;
-  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 
   @media all and ${min.tabletSm} {
     bottom: -90px;
@@ -33,21 +37,8 @@ const FeetContainer = styled.div`
 const CalmScene = ({ question }) => {
   return (
     <QuestionBox>
-      <img
-        src={'/assets/waves.svg'}
-        style={{
-          maxWidth: '600px',
-          maxHeight: '200px',
-          width: 'auto',
-          height: 'auto',
-        }}
-      />
-      <FeetContainer>
-        <img
-          src={'/assets/feet.svg'}
-          style={{ width: 'auto', height: 'auto' }}
-        />
-      </FeetContainer>
+      <Waves src={'/assets/waves.svg'} />
+      <Feet src={'/assets/feet.svg'} />
     </QuestionBox>
   );
 };
