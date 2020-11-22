@@ -54,7 +54,7 @@ const Header = ({ sticky }) => {
           </Link>
         </div>
       </StyledHeader>
-      <HeaderSpace />
+      {sticky && <HeaderSpace />}
     </>
   );
 };

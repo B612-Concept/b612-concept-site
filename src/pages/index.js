@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <>
-      <Header sticky />
+      <Header />
       <IndexPageWrapper>
         <Question question={question} />
       </IndexPageWrapper>
