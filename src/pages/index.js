@@ -18,11 +18,6 @@ const IndexPage = ({ data }) => {
       <Header sticky />
       <IndexPageWrapper>
         <Question question={question} />
-        <Question question={question} />
-        <Question question={question} />
-        <Question question={question} />
-        <Question question={question} />
-        <Question question={question} />
       </IndexPageWrapper>
     </>
   );
