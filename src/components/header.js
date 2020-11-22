@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const StyledHeader = styled.header`
@@ -26,6 +27,7 @@ const StyledHeader = styled.header`
 const HeaderSpace = styled.div`
   position: relative;
   height: 150px;
+  z-index: -1;
 `;
 
 const Header = ({ sticky }) => {
@@ -47,7 +49,9 @@ const Header = ({ sticky }) => {
     <>
       <StyledHeader sticky={sticky} scrollPosition={scrollPosition}>
         <div>
-          <img src="/assets/logo.svg" width="50" />
+          <Link to="/">
+            <img src="/assets/logo.svg" width="50" />
+          </Link>
         </div>
       </StyledHeader>
       <HeaderSpace />
