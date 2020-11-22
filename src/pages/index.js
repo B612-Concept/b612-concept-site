@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Question from '@src/components/question';
+import SensesScene from '@src/components/sensesScene';
 
 const IndexPageWrapper = styled.div`
   display: grid;
@@ -15,6 +16,7 @@ const IndexPage = ({ data }) => {
   return (
     <IndexPageWrapper>
       <Question question={question} />
+      <SensesScene />
     </IndexPageWrapper>
   );
 };
