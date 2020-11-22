@@ -26,7 +26,6 @@ const Question = ({ question }) => {
   const [defaultQuestion, setDefaultQuestion] = useState(true);
 
   useEffect(() => {
-    console.log(question);
     if (question !== 'What does space mean to you?') {
       setDefaultQuestion(false);
     }
