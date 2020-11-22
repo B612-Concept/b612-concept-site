@@ -9,8 +9,10 @@ const StyledHeader = styled.header`
     display: grid;
     place-items: center;
     width: 100%;
-    padding: 16px 0;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     position: ${(props) => (props.sticky ? 'fixed' : 'relative')};
+    padding: ${(props) =>
+      props.sticky && props.scrollPosition > 0 ? '16px 0' : '36px 0 16px'};
 
     ${(props) =>
       props.sticky &&
