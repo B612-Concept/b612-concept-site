@@ -1,21 +1,25 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
+import Header from '@src/components/header';
 import Question from '@src/components/question';
 
 const IndexPageWrapper = styled.div`
   display: grid;
   place-items: center;
-  height: 100%;
+  height: 420px;
 `;
 
 const IndexPage = ({ data }) => {
   const { question } = data.markdownRemark.frontmatter;
 
   return (
-    <IndexPageWrapper>
-      <Question question={question} />
-    </IndexPageWrapper>
+    <>
+      <Header />
+      <IndexPageWrapper>
+        <Question question={question} />
+      </IndexPageWrapper>
+    </>
   );
 };
 
