@@ -12,6 +12,10 @@ const QuestionBox = styled(Box)`
 
 const QuestionTitle = styled(TitleH1)`
   margin-bottom: 0px;
+
+  span {
+    font-style: italic;
+  }
 `;
 
 const TitleWrapper = styled.div`
@@ -36,7 +40,7 @@ const Question = ({ question }) => {
       <TitleWrapper>
         {defaultQuestion ? (
           <QuestionTitle>
-            What does <i>space</i> mean to you?
+            What does <span>space</span> mean to you?
           </QuestionTitle>
         ) : (
           <QuestionTitle>{question}</QuestionTitle>
