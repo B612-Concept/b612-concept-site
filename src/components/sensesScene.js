@@ -34,7 +34,7 @@ const Feet = styled.img`
   }
 `;
 
-const CalmScene = ({ question }) => {
+const SensesScene = ({ question }) => {
   return (
     <QuestionBox>
       <Waves src={'/assets/waves.svg'} />
@@ -43,4 +43,4 @@ const CalmScene = ({ question }) => {
   );
 };
 
-export default CalmScene;
+export default SensesScene;
