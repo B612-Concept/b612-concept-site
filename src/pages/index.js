@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Header from '@src/components/header';
 import Question from '@src/components/question';
+import SensesScene from '@src/components/sensesScene';
 
 const IndexPageWrapper = styled.div`
   display: grid;

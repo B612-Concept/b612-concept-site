@@ -17,7 +17,7 @@ export const Box = styled.div`
 
   @media all and ${max.tabletSm} {
     width: 80vw;
-    height: 200px;
+    height: 150px;
   }
 `;
 
