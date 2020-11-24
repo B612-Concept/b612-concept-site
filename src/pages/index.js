@@ -17,6 +17,7 @@ const IndexPage = ({ data }) => {
     <>
       <IndexPageWrapper>
         <Question question={question} />
+        <SensesScene />
       </IndexPageWrapper>
     </>
   );
