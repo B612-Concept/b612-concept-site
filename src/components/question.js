@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Box from './box';
 import styled from 'styled-components';
 import { TitleH1 } from '../components/fonts';
@@ -27,13 +27,7 @@ const TitleWrapper = styled.div`
 `;
 
 const Question = ({ question }) => {
-  const [defaultQuestion, setDefaultQuestion] = useState(true);
-
-  useEffect(() => {
-    if (question !== 'What does space mean to you?') {
-      setDefaultQuestion(false);
-    }
-  });
+  const defaultQuestion = question === 'What does space mean to you?';
 
   return (
     <QuestionBox>
