@@ -1,5 +1,14 @@
 import React from 'react';
+import Link from '@src/components/link';
 
-const NotFoundPage = () => <h1>404: Not Found</h1>;
+const NotFound = () => (
+  <section>
+    <p>
+      We can’t find what you’re looking for. Try our{' '}
+      <Link url="/">home page</Link> instead?
+    </p>
+    <img src="/assets/404-planet.svg" />
+  </section>
+);
 
-export default NotFoundPage;
+export default NotFound;
