@@ -14,12 +14,10 @@ const IndexPage = ({ data }) => {
   const { question } = data.markdownRemark.frontmatter;
 
   return (
-    <>
-      <IndexPageWrapper>
-        <Question question={question} />
-        <SensesScene />
-      </IndexPageWrapper>
-    </>
+    <IndexPageWrapper>
+      <Question question={question} />
+      <SensesScene />
+    </IndexPageWrapper>
   );
 };
 
