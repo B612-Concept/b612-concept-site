@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import queryString from 'query-string';
+import React, { useCallback, useState } from 'react';
+import { navigate, useLocation } from '@reach/router';
 import styled from 'styled-components';
+
 import Question from '@src/components/question';
 import SensesScene from '@src/components/sensesScene';
 import { max } from '@src/responsive';
-import queryString from 'query-string';
-import { navigate, useLocation } from '@reach/router';
-import { TitleH1 } from '@src/components/fonts';
+
+const BUTTON_GREY = '#BABABA';
+const BUTTON_GLOW = '#F39C4C';
 
 const CarouselWrapper = styled.div`
   height: 100vh;
@@ -13,56 +16,71 @@ const CarouselWrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media ${max.tabletLg} {
+  @media ${max.desktop} {
     flex-direction: column;
   }
 `;
 
-const ButtonWrapper = styled.div`
+const NavigationWrapper = styled.div`
   display: flex;
-  @media ${max.tabletLg} {
+  align-items: center;
+  justify-content: center;
+
+  @media ${max.desktop} {
+    width: 100%;
     position: absolute;
     bottom: 20px;
   }
 `;
 
-const CarouselButton = styled.button`
+const BasicButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
   height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  border: 1px solid grey;
+  border: 1px solid ${BUTTON_GREY};
   background-color: white;
   cursor: pointer;
 
   &:hover {
-    background-color: grey;
+    box-shadow: 0px 0px 100px 0px ${BUTTON_GLOW};
+    transition: 0.8s ease;
   }
+`;
 
-  @media ${max.tabletLg} {
+const ArrowButton = styled(BasicButton)`
+  position: absolute;
+  width: 50px;
+  border-radius: 50%;
+
+  @media ${max.desktop} {
     position: static;
     margin: 10px;
   }
 `;
 
-const LeftButton = styled(CarouselButton)`
-  position: absolute;
-  left: 80px;
-
-  @media ${max.tabletLg} {
-    position: static;
-  }
+const LeftButton = styled(ArrowButton)`
+  left: 200px;
 `;
 
-const RightButton = styled(CarouselButton)`
-  position: absolute;
-  right: 80px;
+const RightButton = styled(ArrowButton)`
+  right: 200px;
+`;
 
-  @media ${max.tabletLg} {
-    position: static;
-  }
+const RefreshButton = styled(BasicButton)`
+  position: absolute;
+  left: 0px;
+  width: 55px;
+  border-radius: 0 50px 50px 0;
+  border-left: 0;
+`;
+
+const LastPageButton = styled(BasicButton)`
+  position: absolute;
+  right: 0px;
+  width: 55px;
+  border-radius: 50px 0 0 50px;
+  border-right: 0;
 `;
 
 const BackArrow = styled.img`
@@ -72,17 +90,6 @@ const BackArrow = styled.img`
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
 `;
-
-const SCENE_INDEX_MAPPINGS = {
-  question_scene: 1,
-  reflection_scene: 2,
-  safe_scene: 3,
-  senses_scene: 4,
-  imagine_scene: 5,
-  calm_scene: 6,
-  getaway_scene: 7,
-  journey_scene: 8,
-};
 
 const getNarrativeComponent = (narrativeIndex, data) => {
   const { question } = data;
@@ -115,29 +122,35 @@ const Carousel = ({ data }) => {
   const indexVal = intIndex > 1 && intIndex <= 7 ? intIndex : 1;
   const [narrativeIndex, setNarrativeIndex] = useState(indexVal);
 
+  const onButtonClick = useCallback(
+    (index) => {
+      setNarrativeIndex(index);
+      navigate(`/?index=${index}`);
+    },
+    [index]
+  );
+
   return (
     <CarouselWrapper>
       {getNarrativeComponent(narrativeIndex, data)}
-      <ButtonWrapper>
+      <NavigationWrapper>
+        <RefreshButton onClick={() => onButtonClick(1)}>
+          <img src={'/assets/refresh.svg'} />
+        </RefreshButton>
         <LeftButton
-          onClick={() => {
-            const prevIndex = Math.max(narrativeIndex - 1, 1);
-            setNarrativeIndex(prevIndex);
-            navigate(`/?index=${prevIndex}`);
-          }}
+          onClick={() => onButtonClick(Math.max(narrativeIndex - 1, 1))}
         >
           <BackArrow src={'/assets/arrow.svg'} />
         </LeftButton>
         <RightButton
-          onClick={() => {
-            const nextIndex = Math.min(narrativeIndex + 1, 7);
-            setNarrativeIndex(nextIndex);
-            navigate(`/?index=${nextIndex}`);
-          }}
+          onClick={() => onButtonClick(Math.min(narrativeIndex + 1, 7))}
         >
           <img src={'/assets/arrow.svg'} />
         </RightButton>
-      </ButtonWrapper>
+        <LastPageButton onClick={() => onButtonClick(7)}>
+          <img src={'/assets/last-page.svg'} />
+        </LastPageButton>
+      </NavigationWrapper>
     </CarouselWrapper>
   );
 };
