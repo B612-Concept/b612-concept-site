@@ -7,7 +7,7 @@ import SensesScene from '@src/components/sensesScene';
 const IndexPageWrapper = styled.div`
   display: grid;
   place-items: center;
-  height: 100%;
+  height: 100vh;
 `;
 
 const IndexPage = ({ data }) => {

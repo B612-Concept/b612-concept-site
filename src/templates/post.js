@@ -158,6 +158,7 @@ export default function Post({ data }) {
     </PostWrapper>
   );
 }
+
 export const query = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {

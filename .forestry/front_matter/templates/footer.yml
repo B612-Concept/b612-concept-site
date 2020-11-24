@@ -1,0 +1,57 @@
+---
+label: Footer
+hide_body: true
+fields:
+- name: headline
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: html
+  label: Headline
+- name: newsletter_description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: html
+  label: Newsletter Description
+- name: navigation_links
+  type: field_group_list
+  fields:
+  - name: link
+    type: include
+    config: {}
+    template: link
+    label: Link
+  config:
+    min: 
+    max: 
+    labelField: label
+  label: Navigation Links
+- name: social_links
+  type: field_group_list
+  fields:
+  - name: link
+    type: include
+    config: {}
+    template: link
+    label: Link
+  config:
+    min: 
+    max: 
+    labelField: label
+  label: Social Links
+- name: copyright
+  type: text
+  config:
+    required: true
+  label: Copyright
+  description: B612's copyright information
+  default: Copyright © B612
+pages:
+- content/footer.md
