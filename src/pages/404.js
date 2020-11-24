@@ -3,10 +3,10 @@ import Link from '@src/components/link';
 
 const NotFound = () => (
   <section>
-    <p>
+    <h1>
       We can’t find what you’re looking for. Try our{' '}
       <Link url="/">home page</Link> instead?
-    </p>
+    </h1>
     <img src="/assets/404-planet.svg" />
   </section>
 );
