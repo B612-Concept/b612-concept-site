@@ -1,60 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const StyledHeader = styled.header`
-  position: relative;
+  display: grid;
+  place-items: center;
   width: 100%;
-
-  div {
-    display: grid;
-    place-items: center;
-    width: 100%;
-    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-    position: ${(props) => (props.sticky ? 'fixed' : 'relative')};
-    padding: ${(props) =>
-      props.sticky && props.scrollPosition > 0 ? '16px 0' : '36px 0 16px'};
-
-    ${(props) =>
-      props.sticky &&
-      props.scrollPosition > 0 &&
-      `
-        backdrop-filter: saturate(180%) blur(20px);
-    `};
-  }
-`;
-
-const HeaderSpace = styled.div`
-  position: relative;
-  height: 150px;
-  z-index: -1;
+  padding-top: 36px;
 `;
 
 const Header = ({ sticky }) => {
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScrollPosition(position);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
   return (
     <>
-      <StyledHeader sticky={sticky} scrollPosition={scrollPosition}>
-        <div>
-          <Link to="/">
-            <img src="/assets/logo.svg" width="50" />
-          </Link>
-        </div>
+      <StyledHeader>
+        <Link to="/">
+          <img src="/assets/logo.svg" width="50" />
+        </Link>
       </StyledHeader>
-      {sticky && <HeaderSpace />}
     </>
   );
 };

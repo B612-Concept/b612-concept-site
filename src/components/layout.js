@@ -1,12 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
+
+import Header from '@src/components/header';
+
 import './layout.css';
-import 'normalize.css';
 
 const LayoutWrapper = styled.main`
   height: 100vh;
 `;
 
-const Layout = ({ children }) => <LayoutWrapper>{children}</LayoutWrapper>;
+const Layout = ({ children }) => {
+  return (
+    <>
+      <Header />
+      <LayoutWrapper>{children}</LayoutWrapper>
+    </>
+  );
+};
 
 export default Layout;
