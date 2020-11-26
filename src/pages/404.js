@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Link from '@src/components/link';
 import { H1 } from '@src/components/fonts';
-import { max, min } from '@src/responsive';
+import { max, devices } from '@src/responsive';
 
 const absoluteCenter = `
   position: absolute;
@@ -29,6 +29,11 @@ const Heading = styled(H1)`
     font-size: 24px;
     width: 90%;
   }
+
+  @media all and ${devices.tablet} {
+    font-size: 36px;
+    width: 90%;
+  }
 `;
 
 const NotFoundIllustration = styled.img`
@@ -42,6 +47,11 @@ const NotFoundIllustration = styled.img`
   @media all and ${max.tablet} {
     width: 100%;
     bottom: -30%;
+  }
+
+  @media all and ${devices.tablet} {
+    width: 50%;
+    bottom: -50%;
   }
 `;
 
