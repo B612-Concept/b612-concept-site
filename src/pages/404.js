@@ -15,7 +15,7 @@ const absoluteCenter = `
 const NotFoundWrapper = styled.section`
   height: 100vh;
   position: relative;
-  scroll-y: hidden;
+  overflow-y: hidden;
 `;
 
 const Heading = styled(H1)`

@@ -7,7 +7,6 @@ import './layout.css';
 
 const LayoutWrapper = styled.main`
   min-height: 100vh;
-  overflow-y: hidden;
 `;
 
 const StyledFooter = styled(Footer)`
