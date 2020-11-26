@@ -7,14 +7,18 @@ import './layout.css';
 
 const LayoutWrapper = styled.main`
   min-height: 100vh;
-  margin-bottom: 100px;
+  overflow-y: hidden;
 `;
 
-const Layout = ({ children }) => {
+const StyledFooter = styled(Footer)`
+  margin-top: 100px;
+`;
+
+const Layout = ({ children, pageContext }) => {
   return (
     <>
       <LayoutWrapper>{children}</LayoutWrapper>
-      <Footer />
+      {!pageContext.hideFooter && <StyledFooter />}
     </>
   );
 };
