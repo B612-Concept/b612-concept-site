@@ -8,7 +8,10 @@ import SensesScene from '@src/components/sensesScene';
 import { max } from '@src/responsive';
 
 const BUTTON_GREY = '#BABABA';
+const DISABLED_BUTTON_GREY = '#EAEBE5';
 const BUTTON_GLOW = '#F39C4C';
+
+const PAGE_COUNT = 8;
 
 const CarouselWrapper = styled.div`
   height: 100vh;
@@ -45,6 +48,12 @@ const BasicButton = styled.button`
   &:hover {
     box-shadow: 0px 0px 100px 0px ${BUTTON_GLOW};
     transition: 0.8s ease;
+  }
+
+  &:disabled {
+    box-shadow: none;
+    cursor: default;
+    background-color: ${DISABLED_BUTTON_GREY};
   }
 `;
 
@@ -84,10 +93,6 @@ const LastPageButton = styled(BasicButton)`
 `;
 
 const BackArrow = styled.img`
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
   transform: rotate(180deg);
 `;
 
@@ -99,17 +104,17 @@ const getNarrativeComponent = (narrativeIndex, data) => {
     case 2:
       return 'Reflect';
     case 3:
-      return <SensesScene />;
+      return 'Safe';
     case 4:
-      return 'Imagine';
+      return <SensesScene />;
     case 5:
-      return 'Calm';
+      return 'Imagine';
     case 6:
-      return 'Getaway';
+      return 'Calm';
     case 7:
-      return 'Planet';
+      return 'Getaway';
     case 8:
-      return 'Planet';
+      return 'Journey';
     default:
       return 'Please try reloading the page.';
   }
@@ -117,37 +122,47 @@ const getNarrativeComponent = (narrativeIndex, data) => {
 
 const Carousel = ({ data }) => {
   const location = useLocation();
-  const { index } = queryString.parse(location.search);
-  const intIndex = parseInt(index);
-  const indexVal = intIndex > 1 && intIndex <= 7 ? intIndex : 1;
+  const { scene } = queryString.parse(location.search);
+  const intIndex = parseInt(scene);
+  const indexVal = intIndex > 1 && intIndex <= PAGE_COUNT ? intIndex : 1;
   const [narrativeIndex, setNarrativeIndex] = useState(indexVal);
 
   const onButtonClick = useCallback(
     (index) => {
       setNarrativeIndex(index);
-      navigate(`/?index=${index}`);
+      navigate(`/?scene=${index}`);
     },
-    [index]
+    [setNarrativeIndex]
   );
 
   return (
     <CarouselWrapper>
       {getNarrativeComponent(narrativeIndex, data)}
       <NavigationWrapper>
-        <RefreshButton onClick={() => onButtonClick(1)}>
+        <RefreshButton
+          disabled={narrativeIndex === 1}
+          onClick={() => onButtonClick(1)}
+        >
           <img src={'/assets/refresh.svg'} />
         </RefreshButton>
         <LeftButton
+          disabled={narrativeIndex === 1}
           onClick={() => onButtonClick(Math.max(narrativeIndex - 1, 1))}
         >
           <BackArrow src={'/assets/arrow.svg'} />
         </LeftButton>
         <RightButton
-          onClick={() => onButtonClick(Math.min(narrativeIndex + 1, 7))}
+          disabled={narrativeIndex === PAGE_COUNT}
+          onClick={() =>
+            onButtonClick(Math.min(narrativeIndex + 1, PAGE_COUNT))
+          }
         >
           <img src={'/assets/arrow.svg'} />
         </RightButton>
-        <LastPageButton onClick={() => onButtonClick(7)}>
+        <LastPageButton
+          disabled={narrativeIndex === PAGE_COUNT}
+          onClick={() => onButtonClick(PAGE_COUNT)}
+        >
           <img src={'/assets/last-page.svg'} />
         </LastPageButton>
       </NavigationWrapper>
