@@ -7,11 +7,11 @@ import Question from '@src/components/question';
 import SensesScene from '@src/components/sensesScene';
 import { max } from '@src/responsive';
 
+const PAGE_COUNT = 8;
+
 const BUTTON_GREY = '#BABABA';
 const DISABLED_BUTTON_GREY = '#EAEBE5';
 const BUTTON_GLOW = '#F39C4C';
-
-const PAGE_COUNT = 8;
 
 const CarouselWrapper = styled.div`
   height: 100vh;
