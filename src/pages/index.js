@@ -148,7 +148,9 @@ const IndexPage = ({ data }) => {
       <Planet />
       <CTA text={cta_text} />
       <Introduction dangerouslySetInnerHTML={{ __html: introduction }} />
-      <Disclaimer dangerouslySetInnerHTML={{ __html: disclaimer }} />
+      {disclaimer && (
+        <Disclaimer dangerouslySetInnerHTML={{ __html: disclaimer }} />
+      )}
     </IndexPageWrapper>
   );
 };
