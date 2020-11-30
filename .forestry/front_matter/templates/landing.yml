@@ -25,3 +25,5 @@ fields:
   config:
     required: true
   label: CTA Text
+pages:
+- content/landing.md
