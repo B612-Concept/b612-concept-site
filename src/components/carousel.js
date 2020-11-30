@@ -130,7 +130,7 @@ const Carousel = ({ data }) => {
   const onButtonClick = useCallback(
     (index) => {
       setNarrativeIndex(index);
-      navigate(`/?scene=${index}`);
+      navigate(`?scene=${index}`);
     },
     [setNarrativeIndex]
   );
