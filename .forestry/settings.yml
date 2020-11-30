@@ -7,6 +7,10 @@ sections:
 - type: heading
   label: Content
 - type: document
+  path: content/landing
+  label: Landing Page
+  match: "**/*"
+- type: document
   path: content/sceneContainer.md
   label: Scene Container
 - type: directory
