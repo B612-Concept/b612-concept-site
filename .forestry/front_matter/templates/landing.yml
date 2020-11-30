@@ -1,4 +1,27 @@
 ---
 label: Landing
 hide_body: true
-fields: []
+fields:
+- name: introduction
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Introduction
+- name: disclaimer
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Disclaimer
+- name: cta_text
+  type: text
+  config:
+    required: true
+  label: CTA Text
