@@ -3,6 +3,8 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import { H1 } from '@src/components/fonts';
+import Link from '@src/components/link';
+import BasicButton from '@src/components/basic-button';
 
 const IndexPageWrapper = styled.section`
   position: relative;
@@ -46,8 +48,34 @@ const Planet = styled.span`
   transform: translate(-50%, -50%);
 `;
 
+const CTALink = styled(Link)`
+  position: absolute;
+  right: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+
+  button {
+    border-radius: 50%;
+    width: 50px;
+    margin-right: 20px;
+  }
+
+  span {
+    font-size: 24px;
+  }
+`;
+
 const CTA = ({ text }) => {
-  return <button></button>;
+  return (
+    <CTALink url="/explore">
+      <BasicButton>
+        <img src={'/assets/arrow.svg'} />
+      </BasicButton>
+      <span>{text}</span>
+    </CTALink>
+  );
 };
 
 const IndexPage = ({ data }) => {
@@ -60,6 +88,7 @@ const IndexPage = ({ data }) => {
   return (
     <IndexPageWrapper>
       <Planet />
+      <CTA text={cta_text} />
       <Introduction dangerouslySetInnerHTML={{ __html: introduction }} />
       <Disclaimer dangerouslySetInnerHTML={{ __html: disclaimer }} />
     </IndexPageWrapper>
