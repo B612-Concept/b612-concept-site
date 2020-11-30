@@ -23,12 +23,12 @@ const Introduction = styled(H1)`
   left: 50%;
   transform: translate(-50%, -50%);
 
-  @media all and ${devices.mobile} {
+  @media all and ${min.mobile} and ${max.tablet} {
     font-size: 24px;
     width: 90%;
   }
 
-  @media all and ${devices.tablet} {
+  @media all and ${min.tablet} and ${max.desktop} {
     font-size: 36px;
     width: 90%;
   }
@@ -48,13 +48,13 @@ const Disclaimer = styled.p`
 
   font-size: 24px;
 
-  @media all and ${devices.mobile} {
+  @media all and ${min.mobile} and ${max.tablet} {
     font-size: 16px;
     width: 90%;
     text-align: left;
   }
 
-  @media all and ${devices.tablet} {
+  @media all and ${min.tablet} and ${max.desktop} {
     font-size: 24px;
     width: 90%;
   }
@@ -78,6 +78,11 @@ const Planet = styled.span`
     height: 300px;
   }
 
+  @media all and ${min.mobile} and ${max.tablet} {
+    width: 200px;
+    height: 200px;
+  }
+
   position: absolute;
   z-index: -1;
 
@@ -93,6 +98,7 @@ const CTALink = styled(Link)`
   transform: translateY(-50%);
   display: flex;
   align-items: center;
+  width: fit-content;
 
   button {
     border-radius: 50%;
@@ -102,6 +108,20 @@ const CTALink = styled(Link)`
 
   span {
     font-size: 24px;
+  }
+
+  @media all and ${min.mobile} and ${max.tablet} {
+    top: 70%;
+    left: 50%;
+    right: 0;
+    transform: translateX(-50%);
+  }
+
+  @media all and ${min.tablet} and ${max.desktop} {
+    top: 70%;
+    left: 50%;
+    right: 0;
+    transform: translateX(-50%);
   }
 `;
 
