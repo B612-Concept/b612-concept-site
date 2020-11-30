@@ -7,18 +7,18 @@ fields:
   default: ''
   config:
     required: true
-    wysiwyg: false
+    wysiwyg: true
     schema:
-      format: markdown
+      format: html
   label: Introduction
 - name: disclaimer
   type: textarea
   default: ''
   config:
     required: false
-    wysiwyg: false
+    wysiwyg: true
     schema:
-      format: markdown
+      format: html
   label: Disclaimer
 - name: cta_text
   type: text
