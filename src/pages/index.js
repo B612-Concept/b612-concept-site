@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { H1 } from '@src/components/fonts';
 import Link from '@src/components/link';
 import BasicButton from '@src/components/basic-button';
+import { min, max, devices } from '@src/responsive';
 
 const IndexPageWrapper = styled.section`
   position: relative;
@@ -21,6 +22,20 @@ const Introduction = styled(H1)`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  @media all and ${devices.mobile} {
+    font-size: 24px;
+    width: 90%;
+  }
+
+  @media all and ${devices.tablet} {
+    font-size: 36px;
+    width: 90%;
+  }
+
+  @media all and ${devices.desktop} {
+    font-size: 36px;
+  }
 `;
 
 const Disclaimer = styled.p`
@@ -30,6 +45,24 @@ const Disclaimer = styled.p`
   transform: translateX(-50%);
 
   text-align: center;
+
+  font-size: 24px;
+
+  @media all and ${devices.mobile} {
+    font-size: 16px;
+    width: 90%;
+    text-align: left;
+  }
+
+  @media all and ${devices.tablet} {
+    font-size: 24px;
+    width: 90%;
+  }
+
+  @media all and ${devices.desktop} {
+    font-size: 18px;
+    width: 50%;
+  }
 `;
 
 const Planet = styled.span`
@@ -37,8 +70,13 @@ const Planet = styled.span`
   box-shadow: 0px 0px 250px rgba(243, 156, 76, 0.5);
   border-radius: 100%;
 
-  width: 20%;
-  padding-top: 20%;
+  width: 500px;
+  height: 500px;
+
+  @media all and ${max.desktopLg} {
+    width: 300px;
+    height: 300px;
+  }
 
   position: absolute;
   z-index: -1;
