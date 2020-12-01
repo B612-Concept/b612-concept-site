@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { H1 } from '@src/components/fonts';
 import Link from '@src/components/link';
 import BasicButton from '@src/components/basic-button';
+import Planet from '@src/components/planet';
 import { min, max, devices } from '@src/responsive';
 
 const IndexPageWrapper = styled.section`
@@ -65,11 +66,7 @@ const Disclaimer = styled.p`
   }
 `;
 
-const Planet = styled.span`
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0px 0px 250px rgba(243, 156, 76, 0.5);
-  border-radius: 100%;
-
+const StyledPlanet = styled(Planet)`
   width: 500px;
   height: 500px;
 
@@ -145,7 +142,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <IndexPageWrapper>
-      <Planet />
+      <StyledPlanet />
       <CTA text={cta_text} />
       <Introduction dangerouslySetInnerHTML={{ __html: introduction }} />
       {disclaimer && (
