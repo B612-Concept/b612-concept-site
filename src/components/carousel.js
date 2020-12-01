@@ -7,6 +7,7 @@ import Question from '@src/components/question';
 import SafeScene from '@src/components/safe-scene';
 import SensesScene from '@src/components/senses-scene';
 import BasicButton from '@src/components/basic-button';
+import GetawayScene from '@src/components/getaway-scene';
 import { max } from '@src/responsive';
 
 const PAGE_COUNT = 8;
@@ -89,7 +90,7 @@ const getNarrativeComponent = (narrativeIndex, data) => {
     case 6:
       return 'Calm';
     case 7:
-      return 'Getaway';
+      return <GetawayScene />;
     case 8:
       return 'Journey';
     default:
