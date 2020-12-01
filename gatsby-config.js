@@ -43,7 +43,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `scenes`,
-        path: `content/sceneContainer.md`,
+        path: `content/scenes.md`,
       },
     },
     {
