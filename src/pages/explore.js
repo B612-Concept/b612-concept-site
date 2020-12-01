@@ -1,9 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
+
 import Carousel from '@src/components/carousel';
-import Question from '@src/components/question';
-import SensesScene from '@src/components/sensesScene';
 
 const IndexPageWrapper = styled.div`
   height: 100vh;
