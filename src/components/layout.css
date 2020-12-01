@@ -6,6 +6,8 @@ body {
     Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol';
   font-weight: 300;
+
+  margin: 0;
 }
 
 .mono {
