@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import Question from '@src/components/question';
 import SafeScene from '@src/components/safe-scene';
-import SensesScene from '@src/components/sensesScene';
+import SensesScene from '@src/components/senses-scene';
 import BasicButton from '@src/components/basic-button';
 import { max } from '@src/responsive';
 
