@@ -4,6 +4,7 @@ import { navigate, useLocation } from '@reach/router';
 import styled from 'styled-components';
 
 import Question from '@src/components/question';
+import SafeScene from '@src/components/safe-scene';
 import SensesScene from '@src/components/sensesScene';
 import { max } from '@src/responsive';
 
@@ -104,7 +105,7 @@ const getNarrativeComponent = (narrativeIndex, data) => {
     case 2:
       return 'Reflect';
     case 3:
-      return 'Safe';
+      return <SafeScene />;
     case 4:
       return <SensesScene />;
     case 5:
