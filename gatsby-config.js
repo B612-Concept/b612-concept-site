@@ -61,6 +61,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `landing`,
+        path: `content/landing.md`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: SITE_NAME,

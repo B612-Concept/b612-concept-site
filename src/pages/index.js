@@ -1,20 +1,153 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
-import Carousel from '@src/components/carousel';
-import Question from '@src/components/question';
-import SensesScene from '@src/components/sensesScene';
 
-const IndexPageWrapper = styled.div`
+import { H1 } from '@src/components/fonts';
+import Link from '@src/components/link';
+import BasicButton from '@src/components/basic-button';
+import Planet from '@src/components/planet';
+import { min, max, devices } from '@src/responsive';
+
+const IndexPageWrapper = styled.section`
+  position: relative;
   height: 100vh;
 `;
 
+const Introduction = styled(H1)`
+  font-weight: 300;
+  position: absolute;
+
+  text-align: center;
+  margin: 0;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @media all and ${min.mobile} and ${max.tablet} {
+    font-size: 24px;
+    width: 90%;
+  }
+
+  @media all and ${min.tablet} and ${max.desktop} {
+    font-size: 36px;
+    width: 90%;
+  }
+
+  @media all and ${devices.desktop} {
+    font-size: 36px;
+  }
+`;
+
+const Disclaimer = styled.p`
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  text-align: center;
+
+  font-size: 24px;
+
+  @media all and ${min.mobile} and ${max.tablet} {
+    font-size: 16px;
+    width: 90%;
+    text-align: left;
+  }
+
+  @media all and ${min.tablet} and ${max.desktop} {
+    font-size: 24px;
+    width: 90%;
+  }
+
+  @media all and ${devices.desktop} {
+    font-size: 18px;
+    width: 50%;
+  }
+`;
+
+const StyledPlanet = styled(Planet)`
+  width: 500px;
+  height: 500px;
+
+  @media all and ${max.desktopLg} {
+    width: 300px;
+    height: 300px;
+  }
+
+  @media all and ${min.mobile} and ${max.tablet} {
+    width: 200px;
+    height: 200px;
+  }
+
+  position: absolute;
+  z-index: -1;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
+
+const CTALink = styled(Link)`
+  position: absolute;
+  right: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  width: fit-content;
+
+  button {
+    border-radius: 50%;
+    width: 50px;
+    margin-right: 20px;
+  }
+
+  span {
+    font-size: 24px;
+  }
+
+  @media all and ${min.mobile} and ${max.tablet} {
+    top: 70%;
+    left: 50%;
+    right: 0;
+    transform: translateX(-50%);
+  }
+
+  @media all and ${min.tablet} and ${max.desktop} {
+    top: 70%;
+    left: 50%;
+    right: 0;
+    transform: translateX(-50%);
+  }
+`;
+
+const CTA = ({ text }) => {
+  return (
+    <CTALink url="/explore">
+      <BasicButton>
+        <img src={'/assets/arrow.svg'} />
+      </BasicButton>
+      <span>{text}</span>
+    </CTALink>
+  );
+};
+
 const IndexPage = ({ data }) => {
-  const scenesData = data.markdownRemark.frontmatter;
+  const {
+    markdownRemark: { frontmatter },
+  } = data;
+
+  const { introduction, disclaimer, cta_text } = frontmatter;
 
   return (
     <IndexPageWrapper>
-      <Carousel data={scenesData} />
+      <StyledPlanet />
+      <CTA text={cta_text} />
+      <Introduction dangerouslySetInnerHTML={{ __html: introduction }} />
+      {disclaimer && (
+        <Disclaimer dangerouslySetInnerHTML={{ __html: disclaimer }} />
+      )}
     </IndexPageWrapper>
   );
 };
@@ -22,38 +155,12 @@ const IndexPage = ({ data }) => {
 export default IndexPage;
 
 export const query = graphql`
-  query IndexPageQuery {
-    markdownRemark(fields: { sourceName: { eq: "scenes" } }) {
+  query LandingPageQuery {
+    markdownRemark(fields: { sourceName: { eq: "landing" } }) {
       frontmatter {
-        question
-        calm_scene {
-          body
-          title
-        }
-        getaway_scene {
-          body
-          title
-        }
-        imagine_scene {
-          body
-          title
-        }
-        journey_scene {
-          body
-          title
-        }
-        reflection_scene {
-          body
-          title
-        }
-        safe_scene {
-          body
-          title
-        }
-        senses_scene {
-          body
-          title
-        }
+        introduction
+        disclaimer
+        cta_text
       }
     }
   }
