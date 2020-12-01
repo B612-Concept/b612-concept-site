@@ -1,20 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Header from '@src/components/header';
 import Footer from '@src/components/footer';
 
 import './layout.css';
 
 const LayoutWrapper = styled.main`
   min-height: 100vh;
-  margin-bottom: 100px;
 `;
 
-const Layout = ({ children }) => {
+const StyledFooter = styled(Footer)`
+  margin-top: 100px;
+`;
+
+const Layout = ({ children, pageContext }) => {
   return (
     <>
+      <Header />
       <LayoutWrapper>{children}</LayoutWrapper>
-      <Footer />
+      {!pageContext.hideFooter && <StyledFooter />}
     </>
   );
 };

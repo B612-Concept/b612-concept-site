@@ -7,6 +7,9 @@ sections:
 - type: heading
   label: Content
 - type: document
+  path: content/landing.md
+  label: Landing Page
+- type: document
   path: content/sceneContainer.md
   label: Scene Container
 - type: directory

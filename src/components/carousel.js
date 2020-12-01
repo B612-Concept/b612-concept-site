@@ -6,13 +6,10 @@ import styled from 'styled-components';
 import Question from '@src/components/question';
 import SafeScene from '@src/components/safe-scene';
 import SensesScene from '@src/components/sensesScene';
+import BasicButton from '@src/components/basic-button';
 import { max } from '@src/responsive';
 
 const PAGE_COUNT = 8;
-
-const BUTTON_GREY = '#BABABA';
-const DISABLED_BUTTON_GREY = '#EAEBE5';
-const BUTTON_GLOW = '#F39C4C';
 
 const CarouselWrapper = styled.div`
   height: 100vh;
@@ -34,27 +31,6 @@ const NavigationWrapper = styled.div`
     width: 100%;
     position: absolute;
     bottom: 20px;
-  }
-`;
-
-const BasicButton = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-  border: 1px solid ${BUTTON_GREY};
-  background-color: white;
-  cursor: pointer;
-
-  &:hover {
-    box-shadow: 0px 0px 100px 0px ${BUTTON_GLOW};
-    transition: 0.8s ease;
-  }
-
-  &:disabled {
-    box-shadow: none;
-    cursor: default;
-    background-color: ${DISABLED_BUTTON_GREY};
   }
 `;
 
@@ -131,7 +107,7 @@ const Carousel = ({ data }) => {
   const onButtonClick = useCallback(
     (index) => {
       setNarrativeIndex(index);
-      navigate(`/?scene=${index}`);
+      navigate(`?scene=${index}`);
     },
     [setNarrativeIndex]
   );
