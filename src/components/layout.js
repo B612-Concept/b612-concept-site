@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Header from '@src/components/header';
 import Footer from '@src/components/footer';
 
 import './layout.css';
@@ -16,6 +17,7 @@ const StyledFooter = styled(Footer)`
 const Layout = ({ children, pageContext }) => {
   return (
     <>
+      <Header />
       <LayoutWrapper>{children}</LayoutWrapper>
       {!pageContext.hideFooter && <StyledFooter />}
     </>
