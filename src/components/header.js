@@ -7,6 +7,7 @@ const StyledHeader = styled.header`
   place-items: center;
   width: 100%;
   padding-top: 36px;
+  position: absolute;
 `;
 
 const Header = ({ sticky }) => {
