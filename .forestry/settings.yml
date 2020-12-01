@@ -1,38 +1,38 @@
 ---
 new_page_extension: md
 auto_deploy: false
-admin_path: '/static/admin'
-webhook_url:
+admin_path: "/static/admin"
+webhook_url: 
 sections:
-  - type: heading
-    label: Content
-  - type: document
-    path: content/landing.md
-    label: Landing
-  - type: document
-    path: content/scenes.md
-    label: Scenes
-  - type: directory
-    path: content/pages
-    label: Posts
-    create: documents
-    match: '**/*'
-    templates:
-      - post
-  - type: heading
-    label: Site Configuration
-  - type: document
-    path: content/footer.md
-    label: Footer
+- type: heading
+  label: Content
+- type: document
+  path: content/landing.md
+  label: Landing
+- type: document
+  path: content/scenes.md
+  label: Scenes
+- type: directory
+  path: content/posts
+  label: Posts
+  create: documents
+  match: "**/*"
+  templates:
+  - post
+- type: heading
+  label: Site Configuration
+- type: document
+  path: content/footer.md
+  label: Footer
 upload_dir: static/uploads
-public_path: '/uploads'
+public_path: "/uploads"
 front_matter_path: ''
 use_front_matter_path: false
-file_template: ':filename:'
+file_template: ":filename:"
 build:
   preview_output_directory: public
   install_dependencies_command: npm install
   preview_docker_image: forestryio/node:12
-  mount_path: '/srv'
-  working_dir: '/srv/public'
+  mount_path: "/srv"
+  working_dir: "/srv/public"
   instant_preview_command: npm run forestry:preview

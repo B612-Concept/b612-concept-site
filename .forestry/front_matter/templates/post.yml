@@ -2,34 +2,30 @@
 label: Post
 hide_body: false
 fields:
-  - name: title
-    type: text
-    config:
-      required: true
-    label: Title
-  - name: date_published
-    type: datetime
-    label: Date Published
-    description: When was this post published?
-    config:
-      required: true
-      date_format: ''
-      time_format:
-      display_utc: false
-      export_format: MM/DD/YYYY
-    default: now
-  - name: featured_image
-    type: file
-    config:
-      maxSize: 64
-    label: Featured Image
-    description: Featured image for hero or sticky image
-  - name: sticky_featured_image
-    type: boolean
-    label: Sticky Featured Image
-    description: Should the featured image be sticky?
-    default: false
-pages:
-  - content/posts/basic-blog.md
-  - content/posts/featured-image.md
-  - content/posts/sticky-featured-image.md
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+- name: date_published
+  type: datetime
+  label: Date Published
+  description: When was this post published?
+  config:
+    required: true
+    date_format: ''
+    time_format: 
+    display_utc: false
+    export_format: MM/DD/YYYY
+  default: now
+- name: featured_image
+  type: file
+  config:
+    maxSize: 64
+  label: Featured Image
+  description: Featured image for hero or sticky image
+- name: sticky_featured_image
+  type: boolean
+  label: Sticky Featured Image
+  description: Should the featured image be sticky?
+  default: false
