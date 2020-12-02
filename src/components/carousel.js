@@ -3,10 +3,11 @@ import React, { useCallback, useState } from 'react';
 import { navigate, useLocation } from '@reach/router';
 import styled from 'styled-components';
 
+import BasicButton from '@src/components/basic-button';
+import ImagineScene from '@src/components/imagine-scene';
 import Question from '@src/components/question';
 import SafeScene from '@src/components/safe-scene';
 import SensesScene from '@src/components/senses-scene';
-import BasicButton from '@src/components/basic-button';
 import { max } from '@src/responsive';
 
 const PAGE_COUNT = 8;
@@ -85,7 +86,7 @@ const getNarrativeComponent = (narrativeIndex, data) => {
     case 4:
       return <SensesScene />;
     case 5:
-      return 'Imagine';
+      return <ImagineScene />;
     case 6:
       return 'Calm';
     case 7:
