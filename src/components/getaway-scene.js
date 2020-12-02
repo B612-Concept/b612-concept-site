@@ -16,11 +16,6 @@ const Car = styled.img`
   left: -120px;
   z-index: 10;
 
-  @media all and ${max.tabletSm} {
-    height: 130px;
-    left: -100px;
-  }
-
   @media all and ${max.tablet} {
     height: 150px;
     left: -70px;
