@@ -19,8 +19,6 @@ sections:
   match: "**/*"
   templates:
   - post
-- type: heading
-  label: Site Configuration
 - type: document
   path: content/footer.md
   label: Footer
