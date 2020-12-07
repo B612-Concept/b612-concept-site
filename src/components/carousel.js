@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import Question from '@src/components/question';
 import SafeScene from '@src/components/safe-scene';
 import SensesScene from '@src/components/senses-scene';
+import JourneyScene from '@src/components/journey-scene';
 import CalmScene from '@src/components/calm-scene';
 import BasicButton from '@src/components/basic-button';
 import GetawayScene from '@src/components/getaway-scene';
@@ -93,7 +94,7 @@ const getNarrativeComponent = (narrativeIndex, data) => {
     case 7:
       return <GetawayScene />;
     case 8:
-      return 'Journey';
+      return <JourneyScene />;
     default:
       return 'Please try reloading the page.';
   }
