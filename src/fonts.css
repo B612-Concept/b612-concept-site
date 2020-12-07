@@ -1,16 +1,16 @@
 @font-face {
   font-family: 'Franklin Gothic';
-  src: url(/fonts/Franklin Gothic/FranklinGothicURW - Book.woff) format('woff'),
-    url(/fonts/Franklin Gothic/FranklinGothicURW - Book.woff2) format('woff2');
+  src: url(/fonts/Franklin Gothic/FranklinGothicURW-Book.woff) format('woff'),
+    url(/fonts/Franklin Gothic/FranklinGothicURW-Book.woff2) format('woff2');
   font-style: normal;
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Franklin Gothic';
-  src: url(/fonts/Franklin Gothic/FranklinGothicURW - BookItalic.woff)
+  src: url(/fonts/Franklin Gothic/FranklinGothicURW-BookItalic.woff)
       format('woff'),
-    url(/fonts/Franklin Gothic/FranklinGothicURW - BookItalic.woff2)
+    url(/fonts/Franklin Gothic/FranklinGothicURW-BookItalic.woff2)
       format('woff2');
   font-style: italic;
   font-weight: normal;
@@ -18,26 +18,25 @@
 
 @font-face {
   font-family: 'Franklin Gothic';
-  src: url(/fonts/Franklin Gothic/FranklinGothicURW - Light.woff) format('woff'),
-    url(/fonts/Franklin Gothic/FranklinGothicURW - Light.woff2) format('woff2');
+  src: url(/fonts/Franklin Gothic/FranklinGothicURW-Light.woff) format('woff'),
+    url(/fonts/Franklin Gothic/FranklinGothicURW-Light.woff2) format('woff2');
   font-style: normal;
   font-weight: 300;
 }
 
 @font-face {
   font-family: 'Franklin Gothic';
-  src: url(/fonts/Franklin Gothic/FranklinGothicURW - Medium.woff)
-      format('woff'),
-    url(/fonts/Franklin Gothic/FranklinGothicURW - Medium.woff2) format('woff2');
+  src: url(/fonts/Franklin Gothic/FranklinGothicURW-Medium.woff) format('woff'),
+    url(/fonts/Franklin Gothic/FranklinGothicURW-Medium.woff2) format('woff2');
   font-style: normal;
   font-weight: 500;
 }
 
 @font-face {
   font-family: 'Franklin Gothic';
-  src: url(/fonts/Franklin Gothic/FranklinGothicURW - MediumItalic.woff)
+  src: url(/fonts/Franklin Gothic/FranklinGothicURW-MediumItalic.woff)
       format('woff'),
-    url(/fonts/Franklin Gothic/FranklinGothicURW - MediumItalic.woff2)
+    url(/fonts/Franklin Gothic/FranklinGothicURW-MediumItalic.woff2)
       format('woff2');
   font-style: italic;
   font-weight: 500;
