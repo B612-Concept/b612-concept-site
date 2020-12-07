@@ -62,3 +62,11 @@
     url(/fonts/InputMono/InputMono-Bold-.woff2) format('woff2');
   font-weight: bold;
 }
+
+@font-face {
+  font-family: 'Input Mono';
+  src: url(/fonts/InputMono/InputMono-BoldItalic-.woff) format('woff'),
+    url(/fonts/InputMono/InputMono-BoldItalic-.woff2) format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}
