@@ -1,16 +1,16 @@
 @font-face {
   font-family: 'Franklin Gothic';
-  src: url(/fonts/Franklin Gothic/FranklinGothicURW-Book.woff) format('woff'),
-    url(/fonts/Franklin Gothic/FranklinGothicURW-Book.woff2) format('woff2');
+  src: url(/fonts/FranklinGothic/FranklinGothicURW-Book.woff) format('woff'),
+    url(/fonts/FranklinGothic/FranklinGothicURW-Book.woff2) format('woff2');
   font-style: normal;
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Franklin Gothic';
-  src: url(/fonts/Franklin Gothic/FranklinGothicURW-BookItalic.woff)
+  src: url(/fonts/FranklinGothic/FranklinGothicURW-BookItalic.woff)
       format('woff'),
-    url(/fonts/Franklin Gothic/FranklinGothicURW-BookItalic.woff2)
+    url(/fonts/FranklinGothic/FranklinGothicURW-BookItalic.woff2)
       format('woff2');
   font-style: italic;
   font-weight: normal;
@@ -18,25 +18,25 @@
 
 @font-face {
   font-family: 'Franklin Gothic';
-  src: url(/fonts/Franklin Gothic/FranklinGothicURW-Light.woff) format('woff'),
-    url(/fonts/Franklin Gothic/FranklinGothicURW-Light.woff2) format('woff2');
+  src: url(/fonts/FranklinGothic/FranklinGothicURW-Light.woff) format('woff'),
+    url(/fonts/FranklinGothic/FranklinGothicURW-Light.woff2) format('woff2');
   font-style: normal;
   font-weight: 300;
 }
 
 @font-face {
   font-family: 'Franklin Gothic';
-  src: url(/fonts/Franklin Gothic/FranklinGothicURW-Medium.woff) format('woff'),
-    url(/fonts/Franklin Gothic/FranklinGothicURW-Medium.woff2) format('woff2');
+  src: url(/fonts/FranklinGothic/FranklinGothicURW-Medium.woff) format('woff'),
+    url(/fonts/FranklinGothic/FranklinGothicURW-Medium.woff2) format('woff2');
   font-style: normal;
   font-weight: 500;
 }
 
 @font-face {
   font-family: 'Franklin Gothic';
-  src: url(/fonts/Franklin Gothic/FranklinGothicURW-MediumItalic.woff)
+  src: url(/fonts/FranklinGothic/FranklinGothicURW-MediumItalic.woff)
       format('woff'),
-    url(/fonts/Franklin Gothic/FranklinGothicURW-MediumItalic.woff2)
+    url(/fonts/FranklinGothic/FranklinGothicURW-MediumItalic.woff2)
       format('woff2');
   font-style: italic;
   font-weight: 500;
@@ -44,21 +44,21 @@
 
 @font-face {
   font-family: 'Input Mono';
-  src: url(/fonts/Input Mono/InputMono-Regular-.woff) format('woff'),
-    url(/fonts/Input Mono/InputMono-Regular-.woff2) format('woff2');
+  src: url(/fonts/InputMono/InputMono-Regular-.woff) format('woff'),
+    url(/fonts/InputMono/InputMono-Regular-.woff2) format('woff2');
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Input Mono';
-  src: url(/fonts/Input Mono/InputMono-Italic-.woff) format('woff'),
-    url(/fonts/Input Mono/InputMono-Italic-.woff2) format('woff2');
+  src: url(/fonts/InputMono/InputMono-Italic-.woff) format('woff'),
+    url(/fonts/InputMono/InputMono-Italic-.woff2) format('woff2');
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Input Mono';
-  src: url(/fonts/Input Mono/InputMono-Bold-.woff) format('woff'),
-    url(/fonts/Input Mono/InputMono-Bold-.woff2) format('woff2');
+  src: url(/fonts/InputMono/InputMono-Bold-.woff) format('woff'),
+    url(/fonts/InputMono/InputMono-Bold-.woff2) format('woff2');
   font-weight: bold;
 }
