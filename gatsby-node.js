@@ -26,7 +26,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage } = actions;
 
-  if (page.path.match(/404/)) {
+  if (page.path.match(/404/) || page.path === '/') {
     page.context.hideFooter = true;
     createPage(page);
   }
