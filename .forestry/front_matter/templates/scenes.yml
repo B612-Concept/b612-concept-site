@@ -1,5 +1,5 @@
 ---
-label: Scene Container
+label: Scenes
 hide_body: true
 fields:
 - name: question
@@ -78,4 +78,4 @@ fields:
     label: Content
   label: Journey Scene
 pages:
-- content/sceneContainer.md
+- content/scenes.md

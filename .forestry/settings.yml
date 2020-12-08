@@ -8,19 +8,17 @@ sections:
   label: Content
 - type: document
   path: content/landing.md
-  label: Landing Page
+  label: Landing
 - type: document
-  path: content/sceneContainer.md
-  label: Scene Container
+  path: content/scenes.md
+  label: Scenes
 - type: directory
-  path: content/blogs
-  label: Blogs
+  path: content/posts
+  label: Posts
   create: documents
   match: "**/*"
   templates:
-  - blog
-- type: heading
-  label: Site Configuration
+  - post
 - type: document
   path: content/footer.md
   label: Footer
