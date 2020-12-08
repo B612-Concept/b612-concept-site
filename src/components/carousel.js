@@ -4,14 +4,14 @@ import { navigate, useLocation } from '@reach/router';
 import styled from 'styled-components';
 
 import BasicButton from '@src/components/basic-button';
-import ImagineScene from '@src/components/imagine-scene';
-import Question from '@src/components/question';
-import SafeScene from '@src/components/safe-scene';
-import SensesScene from '@src/components/senses-scene';
-import JourneyScene from '@src/components/journey-scene';
 import CalmScene from '@src/components/calm-scene';
 import GetawayScene from '@src/components/getaway-scene';
+import ImagineScene from '@src/components/imagine-scene';
+import JourneyScene from '@src/components/journey-scene';
+import Question from '@src/components/question';
 import { max } from '@src/responsive';
+import SafeScene from '@src/components/safe-scene';
+import SensesScene from '@src/components/senses-scene';
 
 const PAGE_COUNT = 8;
 
