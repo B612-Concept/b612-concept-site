@@ -119,32 +119,32 @@ const Carousel = ({ data }) => {
     <CarouselWrapper>
       {getNarrativeComponent(narrativeIndex, data)}
       <NavigationWrapper>
-        <RefreshButton
-          disabled={narrativeIndex === 1}
-          onClick={() => onButtonClick(1)}
-        >
-          <img src={'/assets/refresh.svg'} />
-        </RefreshButton>
-        <LeftButton
-          disabled={narrativeIndex === 1}
-          onClick={() => onButtonClick(Math.max(narrativeIndex - 1, 1))}
-        >
-          <BackArrow src={'/assets/arrow.svg'} />
-        </LeftButton>
-        <RightButton
-          disabled={narrativeIndex === PAGE_COUNT}
-          onClick={() =>
-            onButtonClick(Math.min(narrativeIndex + 1, PAGE_COUNT))
-          }
-        >
-          <img src={'/assets/arrow.svg'} />
-        </RightButton>
-        <LastPageButton
-          disabled={narrativeIndex === PAGE_COUNT}
-          onClick={() => onButtonClick(PAGE_COUNT)}
-        >
-          <img src={'/assets/last-page.svg'} />
-        </LastPageButton>
+        {narrativeIndex !== 1 && (
+          <RefreshButton onClick={() => onButtonClick(1)}>
+            <img src={'/assets/refresh.svg'} />
+          </RefreshButton>
+        )}
+        {narrativeIndex !== 1 && (
+          <LeftButton
+            onClick={() => onButtonClick(Math.max(narrativeIndex - 1, 1))}
+          >
+            <BackArrow src={'/assets/arrow.svg'} />
+          </LeftButton>
+        )}
+        {narrativeIndex !== PAGE_COUNT && (
+          <RightButton
+            onClick={() =>
+              onButtonClick(Math.min(narrativeIndex + 1, PAGE_COUNT))
+            }
+          >
+            <img src={'/assets/arrow.svg'} />
+          </RightButton>
+        )}
+        {narrativeIndex !== PAGE_COUNT && (
+          <LastPageButton onClick={() => onButtonClick(PAGE_COUNT)}>
+            <img src={'/assets/last-page.svg'} />
+          </LastPageButton>
+        )}
       </NavigationWrapper>
     </CarouselWrapper>
   );
