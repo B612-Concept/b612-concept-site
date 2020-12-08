@@ -4,6 +4,7 @@ import { navigate, useLocation } from '@reach/router';
 import styled from 'styled-components';
 
 import Question from '@src/components/question';
+import ReflectionScene from '@src/components/reflection-scene';
 import SafeScene from '@src/components/safe-scene';
 import SensesScene from '@src/components/senses-scene';
 import JourneyScene from '@src/components/journey-scene';
@@ -82,7 +83,7 @@ const getNarrativeComponent = (narrativeIndex, data) => {
     case 1:
       return <Question question={question} />;
     case 2:
-      return 'Reflect';
+      return <ReflectionScene />;
     case 3:
       return <SafeScene />;
     case 4:
