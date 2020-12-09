@@ -1,0 +1,81 @@
+---
+label: Scenes
+hide_body: true
+fields:
+  - name: question
+    type: text
+    config:
+      required: true
+    label: Question
+  - name: reflection_scene
+    type: field_group
+    config: {}
+    fields:
+      - name: content
+        type: include
+        config: {}
+        template: scene
+        label: Content
+    label: Reflection Scene
+  - name: safe_scene
+    type: field_group
+    config: {}
+    fields:
+      - name: content
+        type: include
+        config: {}
+        template: scene
+        label: Content
+    label: Safe Scene
+  - name: senses_scene
+    type: field_group
+    config: {}
+    fields:
+      - name: content
+        type: include
+        config: {}
+        template: scene
+        label: Content
+    label: Senses Scene
+  - name: imagine_scene
+    type: field_group
+    config: {}
+    fields:
+      - name: content
+        type: include
+        config: {}
+        template: scene
+        label: Content
+    label: Imagine Scene
+  - name: calm_scene
+    type: field_group
+    config: {}
+    fields:
+      - name: content
+        type: include
+        config: {}
+        template: scene
+        label: Content
+    label: Calm Scene
+  - name: getaway_scene
+    type: field_group
+    config: {}
+    fields:
+      - name: content
+        type: include
+        config: {}
+        template: scene
+        label: Content
+    label: Getaway Scene
+  - name: journey_scene
+    type: field_group
+    config: {}
+    fields:
+      - name: content
+        type: include
+        config: {}
+        template: scene
+        label: Content
+    label: Journey Scene
+pages:
+  - content/scenes.md
