@@ -1,9 +1,10 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const BUTTON_GREY = '#BABABA';
-const DISABLED_BUTTON_GREY = '#EAEBE5';
-const BUTTON_GLOW = '#F39C4C';
+import {
+  BUTTON_GREY,
+  DISABLED_BUTTON_GREY,
+  ORANGE_GLOW,
+} from '@src/components/colors.js';
 
 const BasicButton = styled.button`
   display: flex;
@@ -15,7 +16,7 @@ const BasicButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    box-shadow: 0px 0px 100px 0px ${BUTTON_GLOW};
+    box-shadow: 0px 0px 100px 0px ${ORANGE_GLOW};
     transition: 0.8s ease;
   }
 

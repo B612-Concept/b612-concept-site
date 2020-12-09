@@ -1,9 +1,10 @@
-import React from 'react';
 import styled from 'styled-components';
 
+import { ORANGE_GLOW, PLANET_OFF_WHITE } from '@src/components/colors.js';
+
 const Planet = styled.span`
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0px 0px 250px rgba(243, 156, 76, 0.5);
+  background: ${PLANET_OFF_WHITE};
+  box-shadow: 0px 0px 250px ${ORANGE_GLOW};
   border-radius: 100%;
 
   width: 500px;

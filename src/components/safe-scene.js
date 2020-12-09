@@ -1,11 +1,13 @@
 import React from 'react';
-import Box from './box';
 import styled from 'styled-components';
+
+import Box from './box';
 import { max } from '@src/responsive';
 
 const SafeSceneWrapper = styled.div`
   position: relative;
 `;
+
 const SafeImage = styled.img`
   position: absolute;
   top: 50%;

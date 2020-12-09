@@ -1,7 +1,9 @@
 import React from 'react';
-import Box from './box';
 import styled from 'styled-components';
-import { max } from '@src/responsive';
+
+import Box from './box';
+import { ORANGE_GLOW } from '@src/components/colors.js';
+import { max, min } from '@src/responsive';
 
 const getLeftPx = (index) =>
   `calc(var(--first-img-left) + var(--img-gap) * ${index});`;
@@ -24,6 +26,14 @@ const ImagineSceneWrapper = styled.div`
   }
 `;
 
+const LightOrb = styled.div`
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  box-shadow: 10px 0px 0px 0px ${ORANGE_GLOW};
+`;
+
 const ImagineImg = styled.img`
   position: absolute;
 `;
@@ -37,14 +47,35 @@ const SmallImg = styled(ImagineImg)`
   }
 `;
 
+const LightbulbImg = styled(SmallImg)`
+  &:hover ~ ${LightOrb} {
+    box-shadow: 10px 0px 40px 20px ${ORANGE_GLOW};
+    transition: 0.8s ease;
+  }
+`;
+
 const StarLeftImg = styled(SmallImg)`
   left: ${getLeftPx(0)};
   top: calc(var(--highest-top) + 40px);
 `;
 
-const LightLeftImg = styled(SmallImg)`
+const LightLeftImg = styled(LightbulbImg)`
   left: ${getLeftPx(1)};
   top: calc(var(--highest-top) + 20px);
+
+  @media ${min.tablet} {
+    &:hover ~ ${LightOrb} {
+      left: ${getLeftPx(1)};
+      top: calc(var(--highest-top) + 120px);
+    }
+  }
+
+  @media ${max.tablet} {
+    &:hover ~ ${LightOrb} {
+      left: ${getLeftPx(1)};
+      top: calc(var(--highest-top) + 100px);
+    }
+  }
 
   @media ${max.tabletSm} {
     display: none;
@@ -65,12 +96,31 @@ const MoonImg = styled(ImagineImg)`
   }
 `;
 
-const LightMiddleImg = styled(SmallImg)`
+const LightMiddleImg = styled(LightbulbImg)`
   left: ${getLeftPx(3)};
   top: var(--highest-top);
 
+  @media ${min.tablet} {
+    &:hover ~ ${LightOrb} {
+      left: ${getLeftPx(3)};
+      top: calc(var(--highest-top) + 145px);
+    }
+  }
+
+  @media ${max.tablet} {
+    &:hover ~ ${LightOrb} {
+      left: ${getLeftPx(3)};
+      top: calc(var(--highest-top) + 110px);
+    }
+  }
+
   @media ${max.tabletSm} {
     left: ${getLeftPx(2)};
+
+    &:hover ~ ${LightOrb} {
+      left: ${getLeftPx(2)};
+      top: calc(var(--highest-top) + 110px);
+    }
   }
 `;
 
@@ -83,9 +133,23 @@ const StarMiddleImg = styled(SmallImg)`
   }
 `;
 
-const LightRightImg = styled(SmallImg)`
+const LightRightImg = styled(LightbulbImg)`
   left: ${getLeftPx(5)};
   top: calc(var(--highest-top) + 40px);
+
+  @media ${min.tablet} {
+    &:hover ~ ${LightOrb} {
+      left: ${getLeftPx(5)};
+      top: calc(var(--highest-top) + 190px);
+    }
+  }
+
+  @media ${max.tablet} {
+    &:hover ~ ${LightOrb} {
+      left: ${getLeftPx(5)};
+      top: calc(var(--highest-top) + 150px);
+    }
+  }
 
   @media ${max.tabletSm} {
     display: none;
@@ -134,11 +198,20 @@ const ImagineScene = () => {
     <ImagineSceneWrapper>
       <Box />
       <StarLeftImg src={'/assets/star-1.svg'} />
-      <LightLeftImg src={'/assets/light-1.svg'} />
+      <div>
+        <LightLeftImg src={'/assets/light-1.svg'} />
+        <LightOrb />
+      </div>
       <MoonImg src={'/assets/moon-1.svg'} />
-      <LightMiddleImg src={'/assets/light-2.svg'} />
+      <div>
+        <LightMiddleImg src={'/assets/light-2.svg'} />
+        <LightOrb />
+      </div>
       <StarMiddleImg src={'/assets/star-2.svg'} />
-      <LightRightImg src={'/assets/light-3.svg'} />
+      <div>
+        <LightRightImg src={'/assets/light-3.svg'} />
+        <LightOrb />
+      </div>
       <StarRightImg src={'/assets/star-3.svg'} />
       <PlanetLeftImg src={'/assets/planet-1.svg'} />
       <PlanetRightImg src={'/assets/planet-2.svg'} />
