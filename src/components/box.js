@@ -1,9 +1,11 @@
+import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 import { BOX_SHADOW_BLACK } from '@src/components/colors.js';
 import { max, min } from '@src/responsive';
 
-export const Box = styled.div`
+const Box = styled.div`
   background-color: #fff;
   font-size: 20px;
   box-shadow: 0px 0px 50px ${BOX_SHADOW_BLACK};
@@ -23,4 +25,21 @@ export const Box = styled.div`
   }
 `;
 
-export default Box;
+const ChildrenWrapper = styled(motion.div)`
+  width: 100%;
+  height: 100%;
+`;
+
+const MotionBox = (props) => {
+  return (
+    <Box>
+      <ChildrenWrapper
+        {...props}
+        animate={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+      />
+    </Box>
+  );
+};
+
+export default MotionBox;
