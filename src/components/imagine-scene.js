@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Box from './box';
-import { ORANGE_GLOW } from '@src/components/colors.js';
+import { ORANGE_GLOW } from '@src/components/colors';
 import { max, min } from '@src/responsive';
 
 const getLeftPx = (index) =>

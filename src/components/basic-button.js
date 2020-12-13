@@ -4,7 +4,7 @@ import {
   BUTTON_GREY,
   DISABLED_BUTTON_GREY,
   ORANGE_GLOW,
-} from '@src/components/colors.js';
+} from '@src/components/colors';
 
 const BasicButton = styled.button`
   display: flex;
