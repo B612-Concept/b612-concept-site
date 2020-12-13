@@ -1,17 +1,18 @@
 import queryString from 'query-string';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { navigate, useLocation } from '@reach/router';
 import styled from 'styled-components';
 
+import BasicButton from '@src/components/basic-button';
+import CalmScene from '@src/components/calm-scene';
+import GetawayScene from '@src/components/getaway-scene';
+import ImagineScene from '@src/components/imagine-scene';
+import JourneyScene from '@src/components/journey-scene';
 import Question from '@src/components/question';
 import ReflectionScene from '@src/components/reflection-scene';
+import { max } from '@src/responsive';
 import SafeScene from '@src/components/safe-scene';
 import SensesScene from '@src/components/senses-scene';
-import JourneyScene from '@src/components/journey-scene';
-import CalmScene from '@src/components/calm-scene';
-import BasicButton from '@src/components/basic-button';
-import GetawayScene from '@src/components/getaway-scene';
-import { max } from '@src/responsive';
 
 const PAGE_COUNT = 8;
 
@@ -89,7 +90,7 @@ const getNarrativeComponent = (narrativeIndex, data) => {
     case 4:
       return <SensesScene />;
     case 5:
-      return 'Imagine';
+      return <ImagineScene />;
     case 6:
       return <CalmScene />;
     case 7:
@@ -107,6 +108,12 @@ const Carousel = ({ data }) => {
   const intIndex = parseInt(scene);
   const indexVal = intIndex > 1 && intIndex <= PAGE_COUNT ? intIndex : 1;
   const [narrativeIndex, setNarrativeIndex] = useState(indexVal);
+
+  useEffect(() => {
+    if (narrativeIndex !== indexVal) {
+      setNarrativeIndex(indexVal);
+    }
+  });
 
   const onButtonClick = useCallback(
     (index) => {
