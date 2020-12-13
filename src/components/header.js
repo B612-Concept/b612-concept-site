@@ -10,12 +10,12 @@ const StyledHeader = styled.header`
   position: absolute;
 `;
 
-const Header = ({ sticky }) => {
+const Header = () => {
   return (
     <>
       <StyledHeader>
         <Link to="/">
-          <img src="/assets/logo.svg" width="50" />
+          <img src="/assets/logo.svg" width="50" height="41.07" />
         </Link>
       </StyledHeader>
     </>

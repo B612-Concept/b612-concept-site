@@ -20,3 +20,10 @@ body {
 button:hover {
   cursor: pointer;
 }
+
+a {
+  color: black;
+}
+a:hover {
+  color: #111;
+}
