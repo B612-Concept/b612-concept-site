@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import flags, { data, US } from 'emoji-flags';
+import addToMailchimp from 'gatsby-plugin-mailchimp';
 
 import { inputMono } from '@src/styles';
 import { max } from '@src/responsive';
@@ -81,21 +82,30 @@ const NewsletterForm = ({ className }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    const email = e.target.email.value;
+    const countryName = e.target.country.value;
+    const listField = { COUNTRY: countryName };
+    addToMailchimp(email, listField);
   };
 
   return (
     <FormWrapper className={className} onSubmit={onSubmit}>
       <FieldsWrapper>
         <InputWrapper
+          name="email"
           placeholder="Email address"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <CountriesWrapper>
           <div>{country.emoji}</div>
-          <select onChange={(e) => setCountry(flags[e.target.value])}>
+          <select
+            defaultValue={country.name}
+            name="country"
+            onChange={(e) => setCountry(flags[e.target.value])}
+          >
             {data.map(({ emoji, name, code }) => (
-              <option key={code} value={code}>
+              <option key={code} value={name}>
                 {name}
               </option>
             ))}
