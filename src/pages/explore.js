@@ -3,22 +3,23 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import Carousel from '@src/components/carousel';
+import withFadeIn from '@src/components/with-fade-in';
 
-const IndexPageWrapper = styled.div`
+const ExplorePageWrapper = styled.div`
   height: 100vh;
 `;
 
-const IndexPage = ({ data }) => {
+const ExplorePage = ({ className, data }) => {
   const scenesData = data.markdownRemark.frontmatter;
 
   return (
-    <IndexPageWrapper>
+    <ExplorePageWrapper className={className}>
       <Carousel data={scenesData} />
-    </IndexPageWrapper>
+    </ExplorePageWrapper>
   );
 };
 
-export default IndexPage;
+export default withFadeIn(ExplorePage);
 
 export const query = graphql`
   query IndexPageQuery {

@@ -1,11 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import { H1 } from '@src/components/fonts';
 import Link from '@src/components/link';
 import BasicButton from '@src/components/basic-button';
 import Planet from '@src/components/planet';
+import withFadeIn from '@src/components/with-fade-in';
 import { min, max, devices } from '@src/responsive';
 
 const IndexPageWrapper = styled.section`
@@ -133,7 +134,7 @@ const CTA = ({ text }) => {
   );
 };
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ className, data }) => {
   const {
     markdownRemark: { frontmatter },
   } = data;
@@ -141,7 +142,7 @@ const IndexPage = ({ data }) => {
   const { introduction, disclaimer, cta_text } = frontmatter;
 
   return (
-    <IndexPageWrapper>
+    <IndexPageWrapper className={className}>
       <StyledPlanet />
       <CTA text={cta_text} />
       <Introduction dangerouslySetInnerHTML={{ __html: introduction }} />
@@ -152,7 +153,7 @@ const IndexPage = ({ data }) => {
   );
 };
 
-export default IndexPage;
+export default withFadeIn(IndexPage);
 
 export const query = graphql`
   query LandingPageQuery {
