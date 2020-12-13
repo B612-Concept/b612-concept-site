@@ -1,5 +1,5 @@
 import queryString from 'query-string';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { navigate, useLocation } from '@reach/router';
 import styled from 'styled-components';
 
@@ -108,6 +108,12 @@ const Carousel = ({ data }) => {
   const intIndex = parseInt(scene);
   const indexVal = intIndex > 1 && intIndex <= PAGE_COUNT ? intIndex : 1;
   const [narrativeIndex, setNarrativeIndex] = useState(indexVal);
+
+  useEffect(() => {
+    if (narrativeIndex !== indexVal) {
+      setNarrativeIndex(indexVal);
+    }
+  });
 
   const onButtonClick = useCallback(
     (index) => {
