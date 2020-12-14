@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import { H1, P } from '@src/components/fonts';
+import HTML from '@src/components/html';
 import { formatDate } from '@src/utils';
 
 import { Responsive, min, max } from '@src/responsive';
@@ -98,7 +99,7 @@ const StickyFeaturedImage = styled.img`
   }
 `;
 
-const Body = styled.div`
+const HTMLBody = styled(HTML)`
   padding-top: 0.5rem;
   margin-bottom: 128px;
 
@@ -111,10 +112,6 @@ const Body = styled.div`
   img {
     max-width: 100%;
     height: auto;
-  }
-
-  p {
-    font-weight: 300;
   }
 `;
 
@@ -153,7 +150,7 @@ export default function Post({ data }) {
           ) : (
             <FeaturedImage src={featured_image} />
           ))}
-        <Body dangerouslySetInnerHTML={{ __html: html }} />
+        <HTMLBody html={html} />
       </BodyContainer>
     </PostWrapper>
   );
