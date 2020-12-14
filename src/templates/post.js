@@ -47,6 +47,7 @@ const Title = styled.div`
 `;
 
 const SmallDate = styled.div`
+  font-size: 18px;
   margin-bottom: 1rem;
 
   @media all and ${min.tablet} {
@@ -56,7 +57,8 @@ const SmallDate = styled.div`
 `;
 
 const BigDate = styled.div`
-  margin: 3rem 0;
+  margin: 3.2rem 0;
+  font-size: 18px;
   display: block;
   position: absolute;
   left: -30%;
