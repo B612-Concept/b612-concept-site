@@ -25,48 +25,31 @@ const PostWrapper = styled.div`
 const TitleDateWrapper = styled.div`
   position: relative;
   display: flex;
-  flex-direction: column-reverse;
-  min-height: 150px;
+  flex-direction: column;
 
-  @media all and ${min.tablet} {
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: center;
-    max-width: 1024px;
-    margin: 0 auto;
+  h1 {
+    margin: 0;
+    margin-top: 60px;
   }
-`;
 
-const Title = styled.div`
   @media all and ${min.tabletLg} {
+    max-width: 644px;
+    margin-left: auto;
+    margin-bottom: 20px;
+  }
+`;
+
+const Date = styled.div`
+  @media all and ${min.tabletLg} {
+    font-size: 18px;
+    display: block;
     position: absolute;
-    right: 0;
-    width: 644px;
-    display: flex;
-    align-items: flex-end;
+    left: -30%;
+    bottom: 2.5px;
   }
-`;
-
-const SmallDate = styled.div`
-  font-size: 18px;
-  margin-bottom: 1rem;
-
-  @media all and ${min.tablet} {
-    margin-bottom: 0;
-    margin-right: 20px;
-  }
-`;
-
-const BigDate = styled.div`
-  margin: 3.2rem 0;
-  font-size: 18px;
-  display: block;
-  position: absolute;
-  left: -30%;
 `;
 
 const BodyContainer = styled.div`
-  position: relative;
   max-width: 1024px;
   margin: 0 auto;
 
@@ -135,22 +118,13 @@ export default function Post({ data }) {
 
   return (
     <PostWrapper>
-      <TitleDateWrapper>
-        <Responsive query={max.tabletLg}>
-          <SmallDate>
-            <P className="mono">{date}</P>
-          </SmallDate>
-        </Responsive>
-        <Title>
-          <Responsive query={min.tabletLg}>
-            <BigDate>
-              <P className="mono">{date}</P>
-            </BigDate>
-          </Responsive>
-          <Heading1>{title}</Heading1>
-        </Title>
-      </TitleDateWrapper>
       <BodyContainer>
+        <TitleDateWrapper>
+          <Heading1>{title}</Heading1>
+          <Date>
+            <P className="mono">{date}</P>
+          </Date>
+        </TitleDateWrapper>
         {featured_image &&
           (sticky_featured_image ? (
             <StickyFeaturedImage src={featured_image} />
