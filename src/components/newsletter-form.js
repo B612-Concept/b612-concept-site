@@ -7,6 +7,9 @@ import { inputMono } from '@src/styles';
 import { max } from '@src/responsive';
 
 const border = '1px solid black';
+const defaultColor = '#a9a9a9';
+const red = 'red';
+const green = 'green';
 
 const FormWrapper = styled.form`
   display: flex;
@@ -58,6 +61,10 @@ const InputWrapper = styled.input`
   border: ${border};
   border-radius: 10px 0 0 10px;
 
+  &::-webkit-input-placeholder {
+    color: ${(props) => props.msgColor};
+  }
+
   width: 100%;
 `;
 
@@ -79,21 +86,40 @@ const ButtonWrapper = styled.button`
 const NewsletterForm = ({ className }) => {
   const [email, setEmail] = useState('');
   const [country, setCountry] = useState(US);
+  const [msgColor, setMsgColor] = useState(defaultColor);
+  const [inputPlaceHolder, setInputPlaceHolder] = useState('Email address');
+
+  const resetInputField = () => {
+    setMsgColor(defaultColor);
+    setInputPlaceHolder('Email address');
+  };
 
   const onSubmit = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const countryName = e.target.country.value;
     const listField = { COUNTRY: countryName };
-    addToMailchimp(email, listField);
+
+    addToMailchimp(email, listField).then((res) => {
+      setEmail('');
+      if (res.result === 'success') {
+        setMsgColor(green);
+        setInputPlaceHolder('Thanks for Subscribing');
+      } else {
+        setMsgColor(red);
+        setInputPlaceHolder('Invalid Email');
+      }
+      setTimeout(() => resetInputField(), 2000);
+    });
   };
 
   return (
     <FormWrapper className={className} onSubmit={onSubmit}>
       <FieldsWrapper>
         <InputWrapper
+          msgColor={msgColor}
           name="email"
-          placeholder="Email address"
+          placeholder={inputPlaceHolder}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
