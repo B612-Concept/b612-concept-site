@@ -19,6 +19,7 @@ const Heading1 = styled(H1)`
 
 const PostWrapper = styled.div`
   padding: 0.5rem;
+  padding-top: 80px;
 `;
 
 const TitleDateWrapper = styled.div`
@@ -103,7 +104,11 @@ const StickyFeaturedImage = styled.img`
 
 const HTMLBody = styled(HTML)`
   padding-top: 0.5rem;
-  margin-bottom: 128px;
+
+  @media all and ${max.tablet} {
+    font-size: 18px;
+    line-height: 24px;
+  }
 
   @media all and ${min.tabletLg} {
     margin-right: 0;
