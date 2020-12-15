@@ -30,6 +30,19 @@ fields:
   label: Sticky Featured Image
   description: Should the featured image be sticky?
   default: false
+- name: author
+  type: select
+  default: []
+  config:
+    required: false
+    options: []
+    source:
+      type: pages
+      section: authors
+      file: 
+      path: 
+  label: Author
+  description: Author of this post
 pages:
 - content/posts/basic-blog.md
 - content/posts/featured-image.md
