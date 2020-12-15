@@ -19,6 +19,13 @@ sections:
   match: "**/*"
   templates:
   - post
+- type: directory
+  path: content/authors
+  label: Authors
+  create: all
+  match: "**/*"
+  templates:
+  - author
 - type: document
   path: content/footer.md
   label: Footer
