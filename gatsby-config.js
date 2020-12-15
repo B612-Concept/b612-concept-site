@@ -10,11 +10,7 @@ function fromStatic(...nodes) {
 }
 
 const SITE_NAME = 'B612';
-
-const prefersDark =
-  typeof window !== 'undefined' &&
-  window.matchMedia('(prefers-color-scheme: dark)').matches;
-const FAVICON = prefersDark ? 'b612-logo.png' : 'b612-logo-white.png';
+const SITE_ICON = 'logo.png';
 
 module.exports = {
   siteMetadata: {
@@ -81,7 +77,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: fromStatic('assets', FAVICON),
+        icon: fromStatic('assets', SITE_ICON),
       },
     },
   ],
