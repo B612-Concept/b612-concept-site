@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import { H1, P } from '@src/components/fonts';
+import HTML from '@src/components/html';
 import { formatDate } from '@src/utils';
 
 import { Responsive, min, max } from '@src/responsive';
@@ -18,51 +19,37 @@ const Heading1 = styled(H1)`
 
 const PostWrapper = styled.div`
   padding: 0.5rem;
+  padding-top: 80px;
 `;
 
 const TitleDateWrapper = styled.div`
   position: relative;
   display: flex;
-  flex-direction: column-reverse;
-  min-height: 150px;
+  flex-direction: column;
 
-  @media all and ${min.tablet} {
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: center;
-    max-width: 1024px;
-    margin: 0 auto;
+  h1 {
+    margin: 0;
+    margin-top: 60px;
   }
-`;
 
-const Title = styled.div`
   @media all and ${min.tabletLg} {
+    max-width: 644px;
+    margin-left: auto;
+    margin-bottom: 20px;
+  }
+`;
+
+const Date = styled.div`
+  @media all and ${min.tabletLg} {
+    font-size: 18px;
+    display: block;
     position: absolute;
-    right: 0;
-    width: 644px;
-    display: flex;
-    align-items: flex-end;
+    left: -30%;
+    bottom: 2.5px;
   }
-`;
-
-const SmallDate = styled.div`
-  margin-bottom: 1rem;
-
-  @media all and ${min.tablet} {
-    margin-bottom: 0;
-    margin-right: 20px;
-  }
-`;
-
-const BigDate = styled.div`
-  margin: 3rem 0;
-  display: block;
-  position: absolute;
-  left: -30%;
 `;
 
 const BodyContainer = styled.div`
-  position: relative;
   max-width: 1024px;
   margin: 0 auto;
 
@@ -98,9 +85,13 @@ const StickyFeaturedImage = styled.img`
   }
 `;
 
-const Body = styled.div`
+const HTMLBody = styled(HTML)`
   padding-top: 0.5rem;
-  margin-bottom: 128px;
+
+  @media all and ${max.tablet} {
+    font-size: 18px;
+    line-height: 24px;
+  }
 
   @media all and ${min.tabletLg} {
     margin-right: 0;
@@ -111,10 +102,6 @@ const Body = styled.div`
   img {
     max-width: 100%;
     height: auto;
-  }
-
-  p {
-    font-weight: 300;
   }
 `;
 
@@ -131,29 +118,20 @@ export default function Post({ data }) {
 
   return (
     <PostWrapper>
-      <TitleDateWrapper>
-        <Responsive query={max.tabletLg}>
-          <SmallDate>
-            <P className="mono">{date}</P>
-          </SmallDate>
-        </Responsive>
-        <Title>
-          <Responsive query={min.tabletLg}>
-            <BigDate>
-              <P className="mono">{date}</P>
-            </BigDate>
-          </Responsive>
-          <Heading1>{title}</Heading1>
-        </Title>
-      </TitleDateWrapper>
       <BodyContainer>
+        <TitleDateWrapper>
+          <Heading1>{title}</Heading1>
+          <Date>
+            <P className="mono">{date}</P>
+          </Date>
+        </TitleDateWrapper>
         {featured_image &&
           (sticky_featured_image ? (
             <StickyFeaturedImage src={featured_image} />
           ) : (
             <FeaturedImage src={featured_image} />
           ))}
-        <Body dangerouslySetInnerHTML={{ __html: html }} />
+        <HTMLBody html={html} />
       </BodyContainer>
     </PostWrapper>
   );
