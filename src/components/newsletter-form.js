@@ -61,7 +61,7 @@ const InputWrapper = styled.input`
   border: ${border};
   border-radius: 10px 0 0 10px;
 
-  &::-webkit-input-placeholder {
+  ::placeholder {
     color: ${(props) => props.msgColor};
   }
 
@@ -97,17 +97,19 @@ const NewsletterForm = ({ className }) => {
   const onSubmit = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
-    const countryName = e.target.country.value;
-    const listField = { COUNTRY: countryName };
+    const listField = { COUNTRY: country.name };
 
     addToMailchimp(email, listField).then((res) => {
       setEmail('');
       if (res.result === 'success') {
         setMsgColor(green);
-        setInputPlaceHolder('Thanks for Subscribing');
+        setInputPlaceHolder('Thanks for subscribing');
+      } else if (res.msg.includes('already subscribed')) {
+        setMsgColor(green);
+        setInputPlaceHolder('Email is already subscribed');
       } else {
         setMsgColor(red);
-        setInputPlaceHolder('Invalid Email');
+        setInputPlaceHolder('Invalid email');
       }
       setTimeout(() => resetInputField(), 2000);
     });
@@ -128,10 +130,12 @@ const NewsletterForm = ({ className }) => {
           <select
             defaultValue={country.name}
             name="country"
-            onChange={(e) => setCountry(flags[e.target.value])}
+            onChange={(e) => {
+              setCountry(flags[e.target.value]);
+            }}
           >
             {data.map(({ emoji, name, code }) => (
-              <option key={code} value={name}>
+              <option key={code} value={code}>
                 {name}
               </option>
             ))}
