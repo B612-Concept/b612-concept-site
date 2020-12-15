@@ -32,7 +32,7 @@ fields:
   default: false
 - name: author
   type: select
-  default: []
+  default: ''
   config:
     required: false
     options: []
