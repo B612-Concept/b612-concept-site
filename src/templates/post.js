@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import { H1, P } from '@src/components/fonts';
+import Author from '@src/components/author';
 import HTML from '@src/components/html';
 import { formatDate } from '@src/utils';
 
@@ -105,14 +106,30 @@ const HTMLBody = styled(HTML)`
   }
 `;
 
+function findAuthor(authors, path) {
+  if (!path) {
+    return null;
+  }
+
+  const authorNode = authors.edges.find(({ node }) =>
+    node.fileAbsolutePath.endsWith(path)
+  );
+
+  return authorNode ? authorNode.node.frontmatter : null;
+}
+
 export default function Post({ data }) {
-  const { frontmatter, html } = data.markdownRemark;
+  const { frontmatter, html } = data.post;
   const {
     date_published,
     title,
     featured_image,
     sticky_featured_image,
+    author: authorFilePath,
   } = frontmatter;
+
+  const { authors } = data;
+  const author = findAuthor(authors, authorFilePath);
 
   const date = formatDate(date_published);
 
@@ -133,13 +150,14 @@ export default function Post({ data }) {
           ))}
         <HTMLBody html={html} />
       </BodyContainer>
+      {author && <Author {...author} />}
     </PostWrapper>
   );
 }
 
 export const query = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    post: markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
         featured_image
@@ -147,6 +165,23 @@ export const query = graphql`
         question
         sticky_featured_image
         title
+        author
+      }
+    }
+
+    authors: allMarkdownRemark(
+      filter: { fields: { sourceName: { eq: "authors" } } }
+    ) {
+      edges {
+        node {
+          fileAbsolutePath
+          frontmatter {
+            name
+            description
+            url
+            photo
+          }
+        }
       }
     }
   }
