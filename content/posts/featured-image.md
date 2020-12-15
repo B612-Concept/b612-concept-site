@@ -3,7 +3,7 @@ date_published: 11/07/2020
 title: Featured Image
 featured_image: "/uploads/24p3gdlblajw2qocoyv4655uyq.jpg"
 sticky_featured_image: false
-author: content/authors/gino-jacob.md
+author: content/authors/bertrand-vacherot.md
 
 ---
 # H1 Heading
