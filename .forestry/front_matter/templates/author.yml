@@ -29,3 +29,5 @@ fields:
   config:
     maxSize: 64
   label: Photo
+pages:
+- content/authors/bertrand-vacherot.md
