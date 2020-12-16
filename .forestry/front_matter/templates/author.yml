@@ -1,0 +1,35 @@
+---
+label: Author
+hide_body: true
+display_field: name
+fields:
+- name: name
+  type: text
+  config:
+    required: true
+  label: Name
+  description: Name of author
+- name: description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: html
+  label: Description
+  description: Description of author
+- name: url
+  type: text
+  config:
+    required: false
+  label: URL
+  description: Author URL (e.g. website, LinkedIn, Instagram)
+- name: photo
+  type: file
+  config:
+    maxSize: 64
+  label: Photo
+pages:
+- content/authors/bertrand-vacherot.md
+- content/authors/gino-jacob.md

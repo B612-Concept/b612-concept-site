@@ -2,6 +2,10 @@ import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
 
 const Link = ({ className, url, children }) => {
+  if (!url) {
+    return children;
+  }
+
   // Check if url is an external link
   if (url.startsWith('http')) {
     return (

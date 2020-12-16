@@ -3,10 +3,12 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import { H1, P } from '@src/components/fonts';
+import Author from '@src/components/author';
 import HTML from '@src/components/html';
 import { formatDate } from '@src/utils';
 
 import { Responsive, min, max } from '@src/responsive';
+import { BUTTON_GREY } from '@src/components/colors';
 
 const Heading1 = styled(H1)`
   font-weight: 300;
@@ -20,6 +22,14 @@ const Heading1 = styled(H1)`
 const PostWrapper = styled.div`
   padding: 0.5rem;
   padding-top: 80px;
+
+  max-width: 1024px;
+  margin: 0 auto;
+
+  @media all and ${max.tablet} {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const TitleDateWrapper = styled.div`
@@ -50,13 +60,25 @@ const Date = styled.div`
 `;
 
 const BodyContainer = styled.div`
-  max-width: 1024px;
-  margin: 0 auto;
+  display: flex;
 
-  @media all and ${max.tablet} {
-    display: flex;
+  @media all and ${max.desktop} {
     flex-direction: column;
   }
+`;
+
+const PostContent = styled.div`
+  padding-top: 0.5rem;
+
+  @media all and ${min.tabletLg} {
+    margin-right: 0;
+    margin-left: auto;
+    max-width: 644px;
+  }
+`;
+
+const BodyWrapper = styled.div`
+  display: flex;
 `;
 
 const FeaturedImage = styled.img`
@@ -69,34 +91,21 @@ const FeaturedImage = styled.img`
   width: 100%;
 `;
 
-const StickyFeaturedImage = styled.img`
-  position: fixed;
-  max-width: 282px;
-  padding-top: 0.5rem;
+const StickyFeaturedImageWrapper = styled.div`
+  padding: 0 20px;
+`;
 
-  @media all and ${max.tabletLg} {
-    position: relative;
-    padding-top: 0rem;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    max-width: 1024px;
-    width: 100%;
-  }
+const StickyFeaturedImage = styled.img`
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding-top: 0.5rem;
 `;
 
 const HTMLBody = styled(HTML)`
-  padding-top: 0.5rem;
-
   @media all and ${max.tablet} {
     font-size: 18px;
     line-height: 24px;
-  }
-
-  @media all and ${min.tabletLg} {
-    margin-right: 0;
-    margin-left: auto;
-    max-width: 644px;
   }
 
   img {
@@ -105,33 +114,61 @@ const HTMLBody = styled(HTML)`
   }
 `;
 
+const StyledAuthor = styled(Author)`
+  border-top: 0.5px solid ${BUTTON_GREY};
+  padding-top: 20px;
+`;
+
+function findAuthor(authors, path) {
+  if (!path) {
+    return null;
+  }
+
+  const authorNode = authors.edges.find(({ node }) =>
+    node.fileAbsolutePath.endsWith(path)
+  );
+
+  return authorNode ? authorNode.node.frontmatter : null;
+}
+
 export default function Post({ data }) {
-  const { frontmatter, html } = data.markdownRemark;
+  const { frontmatter, html } = data.post;
   const {
     date_published,
     title,
     featured_image,
     sticky_featured_image,
+    author: authorFilePath,
   } = frontmatter;
+
+  const { authors } = data;
+  const author = findAuthor(authors, authorFilePath);
 
   const date = formatDate(date_published);
 
   return (
     <PostWrapper>
+      <TitleDateWrapper>
+        <Heading1>{title}</Heading1>
+        <Date>
+          <P className="mono">{date}</P>
+        </Date>
+      </TitleDateWrapper>
+
+      {featured_image && !sticky_featured_image && (
+        <FeaturedImage src={featured_image} />
+      )}
+
       <BodyContainer>
-        <TitleDateWrapper>
-          <Heading1>{title}</Heading1>
-          <Date>
-            <P className="mono">{date}</P>
-          </Date>
-        </TitleDateWrapper>
-        {featured_image &&
-          (sticky_featured_image ? (
+        {featured_image && sticky_featured_image && (
+          <StickyFeaturedImageWrapper>
             <StickyFeaturedImage src={featured_image} />
-          ) : (
-            <FeaturedImage src={featured_image} />
-          ))}
-        <HTMLBody html={html} />
+          </StickyFeaturedImageWrapper>
+        )}
+        <PostContent>
+          <HTMLBody html={html} />
+          {author && <StyledAuthor {...author} />}
+        </PostContent>
       </BodyContainer>
     </PostWrapper>
   );
@@ -139,7 +176,7 @@ export default function Post({ data }) {
 
 export const query = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    post: markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
         featured_image
@@ -147,6 +184,23 @@ export const query = graphql`
         question
         sticky_featured_image
         title
+        author
+      }
+    }
+
+    authors: allMarkdownRemark(
+      filter: { fields: { sourceName: { eq: "authors" } } }
+    ) {
+      edges {
+        node {
+          fileAbsolutePath
+          frontmatter {
+            name
+            description
+            url
+            photo
+          }
+        }
       }
     }
   }

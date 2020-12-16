@@ -1,10 +1,11 @@
 ---
 date_published: 11/07/2020
 title: Featured Image
-featured_image: '/uploads/24p3gdlblajw2qocoyv4655uyq.jpg'
+featured_image: "/uploads/24p3gdlblajw2qocoyv4655uyq.jpg"
 sticky_featured_image: false
----
+author: content/authors/bertrand-vacherot.md
 
+---
 # H1 Heading
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus.

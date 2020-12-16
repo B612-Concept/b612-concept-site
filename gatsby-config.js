@@ -56,6 +56,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `authors`,
+        path: `content/authors/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `footer`,
         path: `content/footer.md`,
       },
