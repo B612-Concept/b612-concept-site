@@ -25,14 +25,6 @@
 
    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.com/tutorial/part-five/#introducing-graphiql)._
 
-## :evergreen_tree: Forestry
-
-The B612 concept website uses [Forestry](https://forestry.io/) as its Content Management System (CMS). Content lives in this repository, and Forestry is a git-based CMS that directly updates files in this repository.
-
-Forestry documentation: https://forestry.io/docs/welcome/
-
-Sourcing from Forestry in Gatsby: https://www.gatsbyjs.com/docs/sourcing-from-forestry.
-
 ## :file_folder: File Structure
 
 - `.forestry`: Configuration for Forestry
@@ -57,3 +49,13 @@ The website is built on the following technologies:
 - [Forestry](https://forestry.io/): CMS
 - [Netlify](https://www.netlify.com/): Static site hosting provider
 - [Mailchimp](https://mailchimp.com/): Marketing automation platform for collecting newsletter contacts
+
+## :evergreen_tree: Forestry
+
+The B612 concept website uses [Forestry](https://forestry.io/) as its Content Management System (CMS). Content lives in this repository, and Forestry is a git-based CMS that directly updates files in this repository.
+
+Forestry documentation: https://forestry.io/docs/welcome/
+
+Sourcing from Forestry in Gatsby: https://www.gatsbyjs.com/docs/sourcing-from-forestry.
+
+> Updates in Forestry will make code changes straight to the `main` branch. Netlify will redeploy the site with every change.
