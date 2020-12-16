@@ -60,6 +60,14 @@ const Date = styled.div`
 `;
 
 const BodyContainer = styled.div`
+  display: flex;
+
+  @media all and ${max.desktop} {
+    flex-direction: column;
+  }
+`;
+
+const PostContent = styled.div`
   padding-top: 0.5rem;
 
   @media all and ${min.tabletLg} {
@@ -67,6 +75,10 @@ const BodyContainer = styled.div`
     margin-left: auto;
     max-width: 644px;
   }
+`;
+
+const BodyWrapper = styled.div`
+  display: flex;
 `;
 
 const FeaturedImage = styled.img`
@@ -79,21 +91,15 @@ const FeaturedImage = styled.img`
   width: 100%;
 `;
 
+const StickyFeaturedImageWrapper = styled.div`
+  padding: 0 20px;
+`;
+
 const StickyFeaturedImage = styled.img`
   position: sticky;
   top: 0;
-  max-width: 282px;
+  width: 100%;
   padding-top: 0.5rem;
-
-  @media all and ${max.tabletLg} {
-    position: relative;
-    padding-top: 0rem;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    max-width: 1024px;
-    width: 100%;
-  }
 `;
 
 const HTMLBody = styled(HTML)`
@@ -152,9 +158,17 @@ export default function Post({ data }) {
       {featured_image && !sticky_featured_image && (
         <FeaturedImage src={featured_image} />
       )}
+
       <BodyContainer>
-        <HTMLBody html={html} />
-        {author && <StyledAuthor {...author} />}
+        {featured_image && sticky_featured_image && (
+          <StickyFeaturedImageWrapper>
+            <StickyFeaturedImage src={featured_image} />
+          </StickyFeaturedImageWrapper>
+        )}
+        <PostContent>
+          <HTMLBody html={html} />
+          {author && <StyledAuthor {...author} />}
+        </PostContent>
       </BodyContainer>
     </PostWrapper>
   );
