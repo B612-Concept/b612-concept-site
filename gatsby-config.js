@@ -10,7 +10,7 @@ function fromStatic(...nodes) {
 }
 
 const SITE_NAME = 'B612';
-const SITE_ICON = 'logo.png';
+const SITE_ICON = 'favicon.png';
 
 module.exports = {
   siteMetadata: {
