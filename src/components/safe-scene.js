@@ -5,7 +5,7 @@ import Box from './box';
 import { max } from '@src/responsive';
 import { Wrapper, SceneText } from './scene-text';
 
-const SafeSceneWrapper = styled.div`
+const SafeSceneWrapper = styled(Box)`
   position: relative;
   margin: auto;
 `;
@@ -26,7 +26,6 @@ const SafeScene = ({ title }) => {
   return (
     <Wrapper>
       <SafeSceneWrapper>
-        <Box />
         <SafeImage src={'/assets/safe.svg'} />
       </SafeSceneWrapper>
       <SceneText>{title}</SceneText>

@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { H1, P } from '@src/components/fonts';
 import Author from '@src/components/author';
 import HTML from '@src/components/html';
+import withFadeIn from '@src/components/with-fade-in';
 import { formatDate } from '@src/utils';
 
 import { Responsive, min, max } from '@src/responsive';
@@ -125,14 +126,15 @@ function findAuthor(authors, path) {
   }
 
   const authorNode = authors.edges.find(({ node }) =>
-    node.fileAbsolutePath.endsWith(path)
+    node.fileAbsolutePath.endsWith(path),
   );
 
   return authorNode ? authorNode.node.frontmatter : null;
 }
 
-export default function Post({ data }) {
+function Post({ className, data }) {
   const { frontmatter, html } = data.post;
+
   const {
     date_published,
     title,
@@ -147,7 +149,7 @@ export default function Post({ data }) {
   const date = formatDate(date_published);
 
   return (
-    <PostWrapper>
+    <PostWrapper className={className}>
       <TitleDateWrapper>
         <Heading1>{title}</Heading1>
         <Date>
@@ -173,6 +175,8 @@ export default function Post({ data }) {
     </PostWrapper>
   );
 }
+
+export default withFadeIn(Post);
 
 export const query = graphql`
   query($slug: String!) {

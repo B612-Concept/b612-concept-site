@@ -5,7 +5,7 @@ import { max, min } from '@src/responsive';
 import Planet from '@src/components/planet';
 import { Wrapper, SceneText } from './scene-text';
 
-const CalmSceneWrapper = styled.div`
+const CalmSceneWrapper = styled(Box)`
   position: relative;
   margin: auto;
 `;
@@ -99,7 +99,6 @@ const CalmScene = ({ title }) => {
   return (
     <Wrapper>
       <CalmSceneWrapper>
-        <Box />
         <Sun />
         <Cloud1 src={'/assets/calmCloud-1.svg'} />
         <Cloud2 src={'/assets/calmCloud-2.svg'} />

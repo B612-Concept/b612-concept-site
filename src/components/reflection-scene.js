@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components';
 import { Wrapper, SceneText } from './scene-text';
 import { max } from '@src/responsive';
 
-const ReflectionSceneWrapper = styled.div`
+const ReflectionSceneWrapper = styled(Box)`
   position: relative;
 `;
 
@@ -97,7 +97,6 @@ const ReflectionScene = ({ title }) => {
   return (
     <Wrapper>
       <ReflectionSceneWrapper>
-        <Box />
         <Face src="/assets/face.svg" />
         <Cloud1 src="/assets/cloud1.svg" />
         <Cloud2 src="/assets/cloud2.svg" />
