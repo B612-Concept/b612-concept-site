@@ -50,4 +50,10 @@ Sourcing from Forestry in Gatsby: https://www.gatsbyjs.com/docs/sourcing-from-fo
 
 ## :gear: Technologies
 
-The website is built on [Gatsby](https://www.gatsbyjs.com/), and [styled-components](https://styled-components.com/)
+The website is built on the following technologies:
+
+- [Gatsby](https://www.gatsbyjs.com/): Static site generator for the site
+- [styled-components](https://styled-components.com/): CSS framework
+- [Forestry](https://forestry.io/): CMS
+- [Netlify](https://www.netlify.com/): Static site hosting provider
+- [Mailchimp](https://mailchimp.com/): Marketing automation platform for collecting newsletter contacts
