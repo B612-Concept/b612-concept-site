@@ -10,6 +10,7 @@ function fromStatic(...nodes) {
 }
 
 const SITE_NAME = 'B612';
+const SITE_ICON = 'favicon.png';
 
 module.exports = {
   siteMetadata: {
@@ -91,7 +92,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: fromStatic('assets', 'gatsby-icon.png'),
+        icon: fromStatic('assets', SITE_ICON),
       },
     },
   ],
