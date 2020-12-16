@@ -1,6 +1,7 @@
 import React from 'react';
 import Box from './box';
 import styled from 'styled-components';
+import { Wrapper, SceneText } from './scene-text';
 
 import Planet from '@src/components/planet';
 import { max } from '@src/responsive';
@@ -53,12 +54,15 @@ const Sun = styled(Planet)`
   }
 `;
 
-const GetawayScene = ({ question }) => {
+const GetawayScene = ({ title }) => {
   return (
-    <QuestionBox>
-      <Sun />
-      <Car src={'/assets/getaway_car.svg'} />
-    </QuestionBox>
+    <Wrapper>
+      <QuestionBox>
+        <Sun />
+        <Car src={'/assets/getaway_car.svg'} />
+      </QuestionBox>
+      <SceneText>{title}</SceneText>
+    </Wrapper>
   );
 };
 

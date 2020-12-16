@@ -4,15 +4,15 @@ import { navigate, useLocation } from '@reach/router';
 import styled from 'styled-components';
 
 import BasicButton from '@src/components/basic-button';
-import CalmScene from '@src/components/calm-scene';
-import GetawayScene from '@src/components/getaway-scene';
-import ImagineScene from '@src/components/imagine-scene';
-import JourneyScene from '@src/components/journey-scene';
 import Question from '@src/components/question';
 import ReflectionScene from '@src/components/reflection-scene';
-import { max } from '@src/responsive';
 import SafeScene from '@src/components/safe-scene';
 import SensesScene from '@src/components/senses-scene';
+import ImagineScene from '@src/components/imagine-scene';
+import CalmScene from '@src/components/calm-scene';
+import GetawayScene from '@src/components/getaway-scene';
+import JourneyScene from '@src/components/journey-scene';
+import { max } from '@src/responsive';
 
 const PAGE_COUNT = 8;
 
@@ -84,19 +84,19 @@ const getNarrativeComponent = (narrativeIndex, data) => {
     case 1:
       return <Question question={question} />;
     case 2:
-      return <ReflectionScene />;
+      return <ReflectionScene title={data.reflection_scene?.title} />;
     case 3:
-      return <SafeScene />;
+      return <SafeScene title={data.safe_scene?.title} />;
     case 4:
-      return <SensesScene />;
+      return <SensesScene title={data.senses_scene?.title} />;
     case 5:
-      return <ImagineScene />;
+      return <ImagineScene title={data.imagine_scene?.title} />;
     case 6:
-      return <CalmScene />;
+      return <CalmScene title={data.calm_scene?.title} />;
     case 7:
-      return <GetawayScene />;
+      return <GetawayScene title={data.getaway_scene?.title} />;
     case 8:
-      return <JourneyScene />;
+      return <JourneyScene title={data.journey_scene?.title} />;
     default:
       return 'Please try reloading the page.';
   }

@@ -7,6 +7,7 @@ export const Box = styled.div`
   background-color: #fff;
   font-size: 20px;
   box-shadow: 0px 0px 50px ${BOX_SHADOW_BLACK};
+  margin: auto;
 
   // Tablet / Desktop should behave the same.
   // This is for the smallest of phones to manipulate the box

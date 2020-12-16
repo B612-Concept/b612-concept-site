@@ -3,9 +3,11 @@ import styled from 'styled-components';
 
 import Box from './box';
 import { max } from '@src/responsive';
+import { Wrapper, SceneText } from './scene-text';
 
 const SafeSceneWrapper = styled.div`
   position: relative;
+  margin: auto;
 `;
 
 const SafeImage = styled.img`
@@ -20,12 +22,15 @@ const SafeImage = styled.img`
   }
 `;
 
-const SafeScene = () => {
+const SafeScene = ({ title }) => {
   return (
-    <SafeSceneWrapper>
-      <Box />
-      <SafeImage src={'/assets/safe.svg'} />
-    </SafeSceneWrapper>
+    <Wrapper>
+      <SafeSceneWrapper>
+        <Box />
+        <SafeImage src={'/assets/safe.svg'} />
+      </SafeSceneWrapper>
+      <SceneText>{title}</SceneText>
+    </Wrapper>
   );
 };
 

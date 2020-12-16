@@ -3,9 +3,11 @@ import Box from './box';
 import styled from 'styled-components';
 import { max, min } from '@src/responsive';
 import Planet from '@src/components/planet';
+import { Wrapper, SceneText } from './scene-text';
 
 const CalmSceneWrapper = styled.div`
   position: relative;
+  margin: auto;
 `;
 
 const CalmHammock = styled.img`
@@ -93,17 +95,20 @@ const Cloud4 = styled.img`
   }
 `;
 
-const CalmScene = () => {
+const CalmScene = ({ title }) => {
   return (
-    <CalmSceneWrapper>
-      <Box />
-      <Sun />
-      <Cloud1 src={'/assets/calmCloud-1.svg'} />
-      <Cloud2 src={'/assets/calmCloud-2.svg'} />
-      <Cloud3 src={'/assets/calmCloud-3.svg'} />
-      <Cloud4 src={'/assets/calmCloud-2.svg'} />
-      <CalmHammock src={'/assets/hammock.svg'} />
-    </CalmSceneWrapper>
+    <Wrapper>
+      <CalmSceneWrapper>
+        <Box />
+        <Sun />
+        <Cloud1 src={'/assets/calmCloud-1.svg'} />
+        <Cloud2 src={'/assets/calmCloud-2.svg'} />
+        <Cloud3 src={'/assets/calmCloud-3.svg'} />
+        <Cloud4 src={'/assets/calmCloud-2.svg'} />
+        <CalmHammock src={'/assets/hammock.svg'} />
+      </CalmSceneWrapper>
+      <SceneText>{title}</SceneText>
+    </Wrapper>
   );
 };
 

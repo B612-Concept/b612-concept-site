@@ -2,6 +2,7 @@ import React from 'react';
 import Box from './box';
 import styled from 'styled-components';
 import { max, min } from '@src/responsive';
+import { Wrapper, SceneText } from './scene-text';
 
 const QuestionBox = styled(Box)`
   position: relative;
@@ -34,12 +35,15 @@ const Feet = styled.img`
   }
 `;
 
-const SensesScene = ({ question }) => {
+const SensesScene = ({ title }) => {
   return (
-    <QuestionBox>
-      <Waves src={'/assets/waves.svg'} />
-      <Feet src={'/assets/feet.svg'} />
-    </QuestionBox>
+    <Wrapper>
+      <QuestionBox>
+        <Waves src={'/assets/waves.svg'} />
+        <Feet src={'/assets/feet.svg'} />
+      </QuestionBox>
+      <SceneText>{title}</SceneText>
+    </Wrapper>
   );
 };
 

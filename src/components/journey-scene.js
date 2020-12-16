@@ -2,6 +2,7 @@ import React from 'react';
 import Box from './box';
 import styled from 'styled-components';
 import { max } from '@src/responsive';
+import { Wrapper, JourneySceneText } from './scene-text';
 
 const PositionBox = styled(Box)`
   position: relative;
@@ -56,6 +57,11 @@ const Stair = styled.img`
     height: 200px;
     bottom: -120px;
   }
+
+  @media all and ${max.tabletSm} {
+    width: 73.33px;
+    height: 171.96px;
+  }
 `;
 
 const Star1 = styled.img`
@@ -106,18 +112,23 @@ const Star4 = styled.img`
   }
 `;
 
-const JourneyScene = ({ question }) => {
+const JourneyScene = ({ title }) => {
   return (
-    <PositionBox>
-      <Stair src={'/assets/stair.svg'} />
-      <Planet src={'/assets/right-planet.svg'} />
-      <Star1 src={'/assets/star.svg'} />
-      <Star2 src={'/assets/star.svg'} />
-      <Star3 src={'/assets/star.svg'} />
-      <Star4 src={'/assets/star.svg'} />
-      <Moon src={'/assets/moon.svg'} />
-      <Saturn src={'/assets/ring-planet.svg'} />
-    </PositionBox>
+    <Wrapper>
+      <PositionBox>
+        <Stair src={'/assets/stair.svg'} />
+        <Planet src={'/assets/right-planet.svg'} />
+        <Star1 src={'/assets/star.svg'} />
+        <Star2 src={'/assets/star.svg'} />
+        <Star3 src={'/assets/star.svg'} />
+        <Star4 src={'/assets/star.svg'} />
+        <Moon src={'/assets/moon.svg'} />
+        <Saturn src={'/assets/ring-planet.svg'} />
+      </PositionBox>
+      <JourneySceneText>
+        <span>{title}</span>
+      </JourneySceneText>
+    </Wrapper>
   );
 };
 

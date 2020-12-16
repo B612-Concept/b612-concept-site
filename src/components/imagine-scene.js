@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Wrapper, SceneText } from './scene-text';
 
 import Box from './box';
 import { ORANGE_GLOW } from '@src/components/colors';
@@ -10,6 +11,7 @@ const getLeftPx = (index) =>
 
 const ImagineSceneWrapper = styled.div`
   position: relative;
+  margin: auto;
   --img-gap: 70px;
   --first-img-left: -10px;
   --highest-top: -120px;
@@ -193,29 +195,32 @@ const PlanetRightImg = styled(ImagineImg)`
   }
 `;
 
-const ImagineScene = () => {
+const ImagineScene = ({ title }) => {
   return (
-    <ImagineSceneWrapper>
-      <Box />
-      <StarLeftImg src={'/assets/star-1.svg'} />
-      <div>
-        <LightLeftImg src={'/assets/light-1.svg'} />
-        <LightOrb />
-      </div>
-      <MoonImg src={'/assets/moon-1.svg'} />
-      <div>
-        <LightMiddleImg src={'/assets/light-2.svg'} />
-        <LightOrb />
-      </div>
-      <StarMiddleImg src={'/assets/star-2.svg'} />
-      <div>
-        <LightRightImg src={'/assets/light-3.svg'} />
-        <LightOrb />
-      </div>
-      <StarRightImg src={'/assets/star-3.svg'} />
-      <PlanetLeftImg src={'/assets/planet-1.svg'} />
-      <PlanetRightImg src={'/assets/planet-2.svg'} />
-    </ImagineSceneWrapper>
+    <Wrapper>
+      <ImagineSceneWrapper>
+        <Box />
+        <StarLeftImg src={'/assets/star-1.svg'} />
+        <div>
+          <LightLeftImg src={'/assets/light-1.svg'} />
+          <LightOrb />
+        </div>
+        <MoonImg src={'/assets/moon-1.svg'} />
+        <div>
+          <LightMiddleImg src={'/assets/light-2.svg'} />
+          <LightOrb />
+        </div>
+        <StarMiddleImg src={'/assets/star-2.svg'} />
+        <div>
+          <LightRightImg src={'/assets/light-3.svg'} />
+          <LightOrb />
+        </div>
+        <StarRightImg src={'/assets/star-3.svg'} />
+        <PlanetLeftImg src={'/assets/planet-1.svg'} />
+        <PlanetRightImg src={'/assets/planet-2.svg'} />
+      </ImagineSceneWrapper>
+      <SceneText>{title}</SceneText>
+    </Wrapper>
   );
 };
 
