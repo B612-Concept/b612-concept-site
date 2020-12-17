@@ -30,6 +30,7 @@
     "gatsby-source-filesystem": "^2.3.35",
     "gatsby-transformer-remark": "^2.9.0",
     "gatsby-transformer-sharp": "^2.5.19",
+    "image-preloader": "^1.1.1",
     "query-string": "^6.13.7",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
