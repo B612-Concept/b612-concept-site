@@ -5,7 +5,7 @@ disclaimer: This is all we have to share for now and invite you to explore what 
   space may mean for you. We can’t wait to share more soon.
 cta_text: Explore
 seo:
-  title: B612
+  title: ''
   description: ''
   image: ''
 
