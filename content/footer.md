@@ -1,5 +1,5 @@
 ---
-copyright: Copyright © B612
+copyright: Copyright © B612, Inc.
 social_links:
 - label: Instagram
   url: https://www.instagram.com/at_b612/
