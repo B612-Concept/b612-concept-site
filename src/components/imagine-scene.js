@@ -9,7 +9,7 @@ import { max, min } from '@src/responsive';
 const getLeftPx = (index) =>
   `calc(var(--first-img-left) + var(--img-gap) * ${index});`;
 
-const ImagineSceneWrapper = styled.div`
+const ImagineSceneWrapper = styled(Box)`
   position: relative;
   margin: auto;
   --img-gap: 70px;
@@ -199,7 +199,6 @@ const ImagineScene = ({ title }) => {
   return (
     <Wrapper>
       <ImagineSceneWrapper>
-        <Box />
         <StarLeftImg src={'/assets/star-1.svg'} />
         <div>
           <LightLeftImg src={'/assets/light-1.svg'} />
