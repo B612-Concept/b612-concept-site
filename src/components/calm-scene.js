@@ -1,6 +1,6 @@
 import React from 'react';
 import Box from './box';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { max, min } from '@src/responsive';
 import Planet from '@src/components/planet';
 import { Wrapper, SceneText } from './scene-text';
@@ -8,6 +8,18 @@ import { Wrapper, SceneText } from './scene-text';
 const CalmSceneWrapper = styled(Box)`
   position: relative;
   margin: auto;
+`;
+
+const float = (y) => keyframes`
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translateY(-${y}px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 `;
 
 const CalmHammock = styled.img`
@@ -51,6 +63,8 @@ const Cloud1 = styled.img`
   height: 70px;
   top: 60px;
   left: -50px;
+  z-index: 11;
+  animation: ${float(5)} 3s ease-in-out infinite;
 
   @media all and ${max.tabletSm} {
     left: -100px;
@@ -61,6 +75,8 @@ const Cloud2 = styled.img`
   position: absolute;
   height: 30px;
   top: -15px;
+  z-index: 11;
+  animation: ${float(8)} 5s ease-in-out infinite;
 
   @media all and ${min.desktopLg} {
     left: 20px;
@@ -76,6 +92,8 @@ const Cloud3 = styled.img`
   top: -50px;
   right: 80px;
   height: 70px;
+  z-index: 11;
+  animation: ${float(10)} 6s ease-in-out infinite;
 
   @media all and ${max.tabletSm} {
     height: 45px;
@@ -89,6 +107,8 @@ const Cloud4 = styled.img`
   bottom: -10px;
   right: -25px;
   height: 50px;
+  z-index: 11;
+  animation: ${float(6)} 4s ease-in-out infinite;
 
   @media all and ${max.tabletSm} {
     right: -60px;
