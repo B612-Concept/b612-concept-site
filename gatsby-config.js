@@ -64,6 +64,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `seo`,
+        path: `content/global-seo.md`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `footer`,
         path: `content/footer.md`,
       },
