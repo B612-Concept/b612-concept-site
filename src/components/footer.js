@@ -206,7 +206,10 @@ const Footer = ({ className }) => {
 
         <UnderlineWrapper>
           <CopyrightWrapper>{copyright}</CopyrightWrapper>
-          <ScoutWrapper>Made with ❤️ by Scout</ScoutWrapper>
+          <ScoutWrapper>
+            Made with ❤️ by{' '}
+            <Link url="https://scout.camd.northeastern.edu/">Scout</Link>
+          </ScoutWrapper>
           <Responsive query={min.tablet}>
             <SocialLinksWrapper>
               {social_links.map(({ label, url }, i) => (
