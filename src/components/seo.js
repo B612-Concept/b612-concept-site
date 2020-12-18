@@ -51,7 +51,7 @@ const SEO = ({ title, description, image }) => {
     <>
       {title && <Title title={title} />}
       {description && <Description description={description} />}
-      {image && <Image image={`${website_url}/${image}`} />}
+      {image && <Image image={`${website_url}${image}`} />}
 
       <Helmet>
         <meta property="og:type" content="website" />
