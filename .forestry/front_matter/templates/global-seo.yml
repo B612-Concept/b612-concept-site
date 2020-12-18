@@ -1,0 +1,17 @@
+---
+label: Global SEO
+hide_body: true
+fields:
+- name: website_url
+  type: text
+  config:
+    required: true
+  label: Website URL
+  default: ''
+- name: seo
+  type: include
+  config: {}
+  template: seo
+  label: SEO
+pages:
+- content/global-seo.md

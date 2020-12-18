@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import ImagePreloader from 'image-preloader';
 
+import SEO from '@src/components/seo';
 import Carousel from '@src/components/carousel';
 import withFadeIn from '@src/components/with-fade-in';
 
@@ -42,6 +43,7 @@ const illustrations = [
 
 const ExplorePage = ({ className, data }) => {
   const scenesData = data.markdownRemark.frontmatter;
+  const { seo } = scenesData;
   const [preloaded, setPreloaded] = useState(false);
 
   /**
@@ -55,6 +57,7 @@ const ExplorePage = ({ className, data }) => {
 
   return preloaded ? (
     <ExplorePageWrapper className={className}>
+      <SEO {...seo} />
       <Carousel data={scenesData} />
     </ExplorePageWrapper>
   ) : null;
@@ -94,6 +97,11 @@ export const query = graphql`
         senses_scene {
           body
           title
+        }
+        seo {
+          title
+          description
+          image
         }
       }
     }

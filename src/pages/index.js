@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import styled, { keyframes } from 'styled-components';
 
+import SEO from '@src/components/seo';
 import { H1 } from '@src/components/fonts';
 import Link from '@src/components/link';
 import BasicButton from '@src/components/basic-button';
@@ -139,10 +140,13 @@ const IndexPage = ({ className, data }) => {
     markdownRemark: { frontmatter },
   } = data;
 
+  const { seo } = frontmatter;
+
   const { introduction, disclaimer, cta_text } = frontmatter;
 
   return (
     <IndexPageWrapper className={className}>
+      <SEO {...seo} />
       <StyledPlanet />
       <CTA text={cta_text} />
       <Introduction dangerouslySetInnerHTML={{ __html: introduction }} />
@@ -162,6 +166,11 @@ export const query = graphql`
         introduction
         disclaimer
         cta_text
+        seo {
+          title
+          description
+          image
+        }
       }
     }
   }

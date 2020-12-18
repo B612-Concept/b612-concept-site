@@ -21,4 +21,9 @@ getaway_scene:
 journey_scene:
   title: A space to journey to your own planet?
   body: ''
+seo:
+  title: Explore B612
+  description: ''
+  image: ''
+
 ---
