@@ -1,4 +1,5 @@
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 
 const Title = ({ title }) => {
@@ -32,11 +33,25 @@ const Image = ({ image }) => {
 };
 
 const SEO = ({ title, description, image }) => {
+  const {
+    seo: {
+      frontmatter: { website_url },
+    },
+  } = useStaticQuery(graphql`
+    {
+      seo: markdownRemark(fields: { sourceName: { eq: "seo" } }) {
+        frontmatter {
+          website_url
+        }
+      }
+    }
+  `);
+
   return (
     <>
       {title && <Title title={title} />}
       {description && <Description description={description} />}
-      {image && <Image image={image} />}
+      {image && <Image image={`${website_url}/${image}`} />}
 
       <Helmet>
         <meta property="og:type" content="website" />

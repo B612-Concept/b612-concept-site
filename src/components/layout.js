@@ -1,4 +1,5 @@
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import SEO from '@src/components/seo';
@@ -16,10 +17,21 @@ const StyledFooter = styled(Footer)`
 `;
 
 const Layout = ({ children, pageContext }) => {
-  const title = 'B612: A private place for you';
-  const description =
-    'B612 is the only wellness experience service that provides a habitual way to disconnect and seclude in a private space for the introspective, achievers in Seattle WA who seek a mental getaway from the urban lifestyle in an era of digital exhaustion and hustle culture.';
-  const image = 'assets/seo-image.jpg';
+  const {
+    seo: {
+      frontmatter: { title, description, image },
+    },
+  } = useStaticQuery(graphql`
+    {
+      seo: markdownRemark(fields: { sourceName: { eq: "seo" } }) {
+        frontmatter {
+          title
+          description
+          image
+        }
+      }
+    }
+  `);
 
   return (
     <>
