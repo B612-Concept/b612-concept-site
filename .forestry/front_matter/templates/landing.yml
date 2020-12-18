@@ -25,5 +25,10 @@ fields:
   config:
     required: true
   label: CTA Text
+- name: seo
+  type: include
+  config: {}
+  template: seo
+  label: SEO
 pages:
 - content/landing.md
