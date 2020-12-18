@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Link from '@src/components/link';
 import { H1 } from '@src/components/fonts';
 import { max, min, devices } from '@src/responsive';
+import withFadeIn from '@src/components/with-fade-in';
 
 const absoluteCenter = `
   position: absolute;
@@ -53,8 +54,8 @@ const NotFoundIllustration = styled.img`
   }
 `;
 
-const NotFound = () => (
-  <NotFoundWrapper>
+const NotFound = ({ className }) => (
+  <NotFoundWrapper className={className}>
     <Heading>
       We can’t find what you’re looking for.
       <br />
@@ -64,4 +65,4 @@ const NotFound = () => (
   </NotFoundWrapper>
 );
 
-export default NotFound;
+export default withFadeIn(NotFound);
