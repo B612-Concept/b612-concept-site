@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
+import SEO from '@src/components/seo';
 import { H1, P } from '@src/components/fonts';
 import Author from '@src/components/author';
 import HTML from '@src/components/html';
@@ -126,14 +127,14 @@ function findAuthor(authors, path) {
   }
 
   const authorNode = authors.edges.find(({ node }) =>
-    node.fileAbsolutePath.endsWith(path),
+    node.fileAbsolutePath.endsWith(path)
   );
 
   return authorNode ? authorNode.node.frontmatter : null;
 }
 
 function Post({ className, data }) {
-  const { frontmatter, html } = data.post;
+  const { frontmatter, html, excerpt } = data.post;
 
   const {
     date_published,
@@ -150,6 +151,8 @@ function Post({ className, data }) {
 
   return (
     <PostWrapper className={className}>
+      <SEO title={title} description={excerpt} />
+
       <TitleDateWrapper>
         <Heading1>{title}</Heading1>
         <Date>
@@ -182,6 +185,7 @@ export const query = graphql`
   query($slug: String!) {
     post: markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      excerpt
       frontmatter {
         featured_image
         date_published
