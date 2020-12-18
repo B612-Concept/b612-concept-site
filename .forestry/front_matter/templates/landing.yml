@@ -26,9 +26,14 @@ fields:
     required: true
   label: CTA Text
 - name: seo
-  type: include
+  type: field_group
   config: {}
-  template: seo
+  fields:
+  - name: seo
+    type: include
+    config: {}
+    template: seo
+    label: SEO
   label: SEO
 pages:
 - content/landing.md
