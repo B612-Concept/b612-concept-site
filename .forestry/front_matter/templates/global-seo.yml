@@ -13,3 +13,5 @@ fields:
   config: {}
   template: seo
   label: SEO
+pages:
+- content/global-seo.md

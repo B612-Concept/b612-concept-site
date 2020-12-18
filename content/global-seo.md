@@ -5,5 +5,6 @@ description: B612 is the only wellness experience service that provides a habitu
   in Seattle WA who seek a mental getaway from the urban lifestyle in an era of digital
   exhaustion and hustle culture.
 image: "/uploads/seo-image.jpg"
+website_url: at-b612.netlify.app
 
 ---
