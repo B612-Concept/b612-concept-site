@@ -43,28 +43,22 @@ const illustrations = [
 
 const ExplorePage = ({ className, data }) => {
   const scenesData = data.markdownRemark.frontmatter;
-  const [preloadFraction, setPreloadFraction] = useState(0);
+  const [preloaded, setPreloaded] = useState(false);
 
+  /**
+   * On mount, preload all illustrations in the experience,
+   * and update progress with each load.
+   */
   useEffect(() => {
     const preloader = new ImagePreloader();
-    const perIlloFraction = 100 / illustrations.length;
-
-    preloader.onProgress = (info) => {
-      if (info.status) {
-        setPreloadFraction(preloadFraction + perIlloFraction);
-      }
-    };
-
-    preloader.preload(...illustrations);
+    preloader.preload(...illustrations).then(() => setPreloaded(true));
   }, []);
 
-  return preloadFraction >= 1 ? (
+  return preloaded ? (
     <ExplorePageWrapper className={className}>
       <Carousel data={scenesData} />
     </ExplorePageWrapper>
-  ) : (
-    <Loader fraction={preloadFraction} />
-  );
+  ) : null;
 };
 
 export default withFadeIn(ExplorePage);
