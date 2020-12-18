@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import ImagePreloader from 'image-preloader';
 
 import Carousel from '@src/components/carousel';
-import Loader from '@src/components/loader';
 import withFadeIn from '@src/components/with-fade-in';
 
 const ExplorePageWrapper = styled.div`
@@ -46,8 +45,8 @@ const ExplorePage = ({ className, data }) => {
   const [preloaded, setPreloaded] = useState(false);
 
   /**
-   * On mount, preload all illustrations in the experience,
-   * and update progress with each load.
+   * On mount, preload all illustrations in the experience
+   * before mounting the carousel
    */
   useEffect(() => {
     const preloader = new ImagePreloader();
