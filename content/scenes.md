@@ -22,7 +22,7 @@ journey_scene:
   title: A space to journey to your own planet?
   body: ''
 seo:
-  title: B612
+  title: ''
   description: ''
   image: ''
 
