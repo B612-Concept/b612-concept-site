@@ -1,4 +1,9 @@
 ---
 label: Global SEO
 hide_body: true
-fields: []
+fields:
+- name: seo
+  type: include
+  config: {}
+  template: seo
+  label: SEO
