@@ -2,6 +2,10 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c2355e71-d761-4963-a3f8-63160b319895/deploy-status)](https://app.netlify.com/sites/at-b612/deploys)
 
+B612 is the only wellness experience service that provides a habitual way to disconnect and seclude in a private space for the introspective, achievers in Seattle WA who seek a mental getaway from the urban lifestyle in an era of digital exhaustion and hustle culture.
+
+This repository is for [B612's concept website](at-b612.netlify.app).
+
 ## :rocket: Getting Started
 
 1. **Install packages.**
@@ -59,3 +63,23 @@ Forestry documentation: https://forestry.io/docs/welcome/
 Sourcing from Forestry in Gatsby: https://www.gatsbyjs.com/docs/sourcing-from-forestry.
 
 > Updates in Forestry will make code changes straight to the `main` branch. Netlify will redeploy the site with every change.
+
+## :phone: Contact
+
+This repository was built by the B612 team at [Scout](https://scout.camd.northeastern.edu/).
+
+**Gino Jacob**<br />
+Project Lead<br />
+gvjacob@outlook.com
+
+**Eric Kim**<br />
+Developer<br />
+kim.er@northeastern.edu
+
+**Jean Zhang**<br />
+Developer<br />
+jeanzhang.neu@gmail.com
+
+**Thomas Wang**<br />
+Developer<br />
+wang.th@northeastern.edu
