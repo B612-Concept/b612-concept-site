@@ -6,7 +6,7 @@ social_links:
 navigation_links:
 - label: Our Mission
   url: "/basic-blog"
-headline: A space for you to journey into your own mind and to just be.
+headline: Your private space for you to just be.
 newsletter_description: Coming to a place near you in 2021.<br>Stay in touch with
   our newsletter.
 
