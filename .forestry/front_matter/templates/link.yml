@@ -12,3 +12,4 @@ fields:
   config:
     required: true
   label: URL
+  description: For local pages, use relative paths starting with `/
