@@ -7,6 +7,6 @@ navigation_links:
 - label: Our Story
   url: "/basic-blog"
 headline: Your private space to just be.
-newsletter_description: Coming to Seattle in 2021.<br>Leave your email below for updates!
+newsletter_description: Coming to Seattle in 2021.<br>Leave us your email for updates!
 
 ---
