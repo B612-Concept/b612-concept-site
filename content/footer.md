@@ -4,10 +4,9 @@ social_links:
 - label: Instagram
   url: https://www.instagram.com/at_b612/
 navigation_links:
-- label: Our Mission
+- label: Our Story
   url: "/basic-blog"
 headline: Your private space to just be.
-newsletter_description: Coming to a place near you in 2021.<br>Stay in touch with
-  our newsletter.
+newsletter_description: Coming to Seattle in 2021.<br>Leave your email below for updates!
 
 ---
