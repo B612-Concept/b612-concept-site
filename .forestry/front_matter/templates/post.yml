@@ -45,4 +45,3 @@ fields:
   description: Author of this post
 pages:
 - content/posts/basic-blog.md
-- content/posts/sticky-featured-image.md
