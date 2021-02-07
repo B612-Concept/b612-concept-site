@@ -1,7 +1,7 @@
 ---
 name: Bertrand Vacherot
-description: Artist and Founder, B612. Avocado lover.
+description: Founder and Chief Avocado Lover @ B612
 url: https://www.linkedin.com/in/bertrandvacherot/
-photo: "/uploads/forest.jpg"
+photo: "/uploads/headshot.jpg"
 
 ---
