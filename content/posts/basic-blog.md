@@ -34,11 +34,11 @@ B612 is a private space that you can rent when you need a simple moment to disco
 
 But B612 is so much more than that.
 
-It is a call to adventure, a pathway to your discover own curiosity and imagination, and maybe even an inspiration to discover something about yourself. It is a safe space where you can be still in this incredibly fast pace world unfolding around us. It is a space where you can have a simple and quiet moment to yourself (or with a close one) away from it all. Actually, maybe one of those many simple moments on your journey that might help you at your own crossroads.
+It is a call to adventure, a pathway to discovering your own curiosity and imagination, or maybe an inspiration to learn something about yourself. It is a safe space where you can be still in this incredibly fast pace world unfolding around us. It is a space where you can have a simple and quiet moment to yourself (or with a close one) away from it all. Actually, maybe one of those many simple moments on your journey that might help you at your own crossroads.
 
 And so now that I might have your attention or that you might be intrigued, your next natural question, will be…well ok cool story, but what does this space actually look like?
 
-I will share that with you soon. I am building it as we speak. In the meantime, I invite you, through this simple and beautiful website, to take a moment and explore what this private space might be for you and why you might one day find yourself using it. 
+I will share that with you soon. I am building it as we speak. In the meantime, I invite you, through this simple and beautiful website, to take a moment and explore what this private space might be for you and why you might one day find yourself using it.
 
 I can't wait to invite you to spend a small moment at B612, soon.
 
