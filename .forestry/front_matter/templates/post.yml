@@ -44,4 +44,5 @@ fields:
   label: Author
   description: Author of this post
 pages:
+- content/posts/a-space-to-reflect-and-think.md
 - content/posts/basic-blog.md
