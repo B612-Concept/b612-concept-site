@@ -16,7 +16,7 @@ You reflect at that moment. Take stock of where you are, what is important to yo
 
 Where does that moment of reflection lead you to? What do you do next? What ideas are born from that moment of clarity? Are you paying attention to when these moments happen?
 
-At B612, you can experience that moment of reflection. That weightlessness of reaching the summit of a mountain.
+At B612, you can experience that moment of reflection. That weightlessness of reaching the summit of a mountain so-to-speak.
 
 À bientôt!
 
